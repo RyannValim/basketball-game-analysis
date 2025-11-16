@@ -1,0 +1,20 @@
+PASSO A PASSO GERAL DE COMO BAIXAR E REALIZAR O PROCESSO DE ANÁLISE E TREINAMENTO DA REDE NEURAL.
+
+===== CONFIGURAÇÕES DO AMBIENTE E DOWNLOAD DO DATASET =====
+1. Primeiro, importar a API do Kaggle no código Python "pip install kaggle".
+
+2. Criar o token de acesso em kaggle.com.
+    - Perfil > Settings > Create New Token (retornará "kaggle.json" para download);
+    - Salvar o arquivo de retorno em C:\Users\<SEU-USER>\.kaggle\. (se não tiver a .kaggle, crie!).
+
+3. Importar a api do kaggle: "from kaggle import api".
+
+4. Escolher o dataset a ser utilizado.
+    - Importante: o link deve ser algo do tipo -> "kaggle.com/datasets/<NOME-DO-CRIADOR>/<NOME-DO-DATASET>".
+
+5. Salvar o link do dataset em uma constante, juntamente com o destino do download da .CSV.
+    - DATASET_REF = "<NOME-DO-CRIADOR>/<NOME-DO-DATASET>";
+    - DESTINO = "./<DADOS-BAIXADOS>" --> Criará uma pasta com os dados em formato .CSV.
+    
+6. Rodar o arquivo em python para realizar o download do dataset.
+===========================================================
