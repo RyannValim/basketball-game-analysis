@@ -1,45 +1,58 @@
 PASSO A PASSO GERAL DE COMO BAIXAR E REALIZAR O PROCESSO DE ANÁLISE E TREINAMENTO DA REDE NEURAL.
 
-===== CONFIGURAÇÕES DO AMBIENTE E DOWNLOAD DO DATASET =====
-1. Primeiro, importar a API do Kaggle no código Python "pip install kaggle".
+Muito importante: executar os arquivos pela numeração para obter o melhor resultado.
 
-2. Criar o token de acesso em kaggle.com.
+===========================================================================
+1. CONFIGURAÇÕES DO AMBIENTE E DOWNLOAD DO DATASET:
+ 1.1. Primeiro, importar a API do Kaggle no código Python "pip install kaggle".
+
+ 1.2. Criar o token de acesso em kaggle.com.
     - Perfil > Settings > Create New Token (retornará "kaggle.json" para download);
     - Salvar o arquivo de retorno em C:\Users\<SEU-USER>\.kaggle\. (se não tiver a .kaggle, crie!).
 
-3. Importar a api do kaggle: "from kaggle import api".
+ 1.3. Importar a api do kaggle: "from kaggle import api".
 
-4. Escolher o dataset a ser utilizado.
+ 1.4. Escolher o dataset a ser utilizado.
     - Importante: o link deve ser algo do tipo -> "kaggle.com/datasets/<NOME-DO-CRIADOR>/<NOME-DO-DATASET>".
 
-5. Salvar o link do dataset em uma constante, juntamente com o destino do download da .CSV.
+ 1.5. Salvar o link do dataset em uma constante, juntamente com o destino do download da .CSV.
     - DATASET_REF = "<NOME-DO-CRIADOR>/<NOME-DO-DATASET>";
     - DESTINO = "./<DADOS-BAIXADOS>" --> Criará uma pasta com os dados em formato .CSV.
-    
-6. Rodar o arquivo em python para realizar o download do dataset.
-===========================================================
 
-===== ANÁLISE INICIAL DO DATASET UTILIZANDO O PANDAS =====
-1. Importar o pandas com "import pandas as pd".
+ 1.6. Rodar o arquivo em python para realizar o download do dataset.
 
-2. Salvar a csv do dataset para leitura em uma variável e printar:
+===========================================================================
+
+2. ANÁLISE INICIAL DO DATASET UTILIZANDO O PANDAS:
+ 2.1. Importar o pandas com "import pandas as pd".
+
+ 2.2. Salvar a csv do dataset para leitura em uma variável e printar:
     - Head(): mostra as 5 primeiras linhas da dataset (entre 0 e 4);
     - Columns: mostra todas as colunas que a csv contém;
     - Info(): mostra os tipos que a csv contém (float, int e object), uso de memória e afins;
     - "League", "Season" e "Stage" para mostrar valores únicos destas colunas.
 
-3. Decisão de quais campos serão utilizados para o treinamento da rede. Alguns dados que foram removidos
- podem causar ruídos no aprendizado, dificultar a generalização e fazerem o modelo aprender algo que
- não influencia no resultado final esperado.
- 
- REMOVIDO:
+===========================================================================
+
+3. Filtrando o CSV para obter outro arquivo menor mostrando exatamente o que queremos:
+    - League: NBA, analisaremos a liga americana NBA;
+    - Season: 2016 - 2017, esta season foi escolhida pois os jogadores que atuaram nela são considerados os melhores do mundo;
+    - Stage: Playoffs, que é quando os times se classificam para jogar o mata-mata (pois têm jogos decisivos - mais interessantes).
+
+===========================================================================
+
+4. Decisão de quais campos serão utilizados para o treinamento da rede. Alguns dados que foram removidos
+    podem causar ruídos no aprendizado, dificultar a generalização e fazerem o modelo aprender algo que
+    não influencia no resultado final esperado.
+
+    REMOVIDO:
     - Altura/peso não possuem um impacto real no jogo, pois as estatísticas de REB (rebotes), BLK (bloqueios)
         e STL (roubos) já capturam isso muito melhor. Um jogador baixo pode ter um poder de impulsão no pulo
         maior que um jogador que é mais alto que ele, por exemplo;
     - Informações como ano/mês/dia de nascimento, informações do draft, escola e nacionalidade não fazem
         nenhum sentido no cenário de jogo;
 
- MANTIDO:
+    MANTIDO:
     - League, Season, Stage, Player e Team: interessantes para contextualizar o jogador;
     - GP e MIN: interessantes para analisar minutos jogados por jogo (minutos/jogo);
     - FGM e FGA: interessantes para calcular o aproveitamento de arremessos em quadra (FG% = FGM / FGA);
@@ -50,5 +63,4 @@ PASSO A PASSO GERAL DE COMO BAIXAR E REALIZAR O PROCESSO DE ANÁLISE E TREINAMEN
     - PTS (junto com MIN e GP): análisar pontos por jogo, pontos por minuto, uso ofensivo, etc.;
     - TOV e PF: análise de posses desperdiçadas e faltas (úteis se o jogador erra muito ou se comete muitas faltas).
 
-4. 
 ==========================================================
