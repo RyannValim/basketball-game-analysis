@@ -18,3 +18,37 @@ PASSO A PASSO GERAL DE COMO BAIXAR E REALIZAR O PROCESSO DE ANÁLISE E TREINAMEN
     
 6. Rodar o arquivo em python para realizar o download do dataset.
 ===========================================================
+
+===== ANÁLISE INICIAL DO DATASET UTILIZANDO O PANDAS =====
+1. Importar o pandas com "import pandas as pd".
+
+2. Salvar a csv do dataset para leitura em uma variável e printar:
+    - Head(): mostra as 5 primeiras linhas da dataset (entre 0 e 4);
+    - Columns: mostra todas as colunas que a csv contém;
+    - Info(): mostra os tipos que a csv contém (float, int e object), uso de memória e afins;
+    - "League", "Season" e "Stage" para mostrar valores únicos destas colunas.
+
+3. Decisão de quais campos serão utilizados para o treinamento da rede. Alguns dados que foram removidos
+ podem causar ruídos no aprendizado, dificultar a generalização e fazerem o modelo aprender algo que
+ não influencia no resultado final esperado.
+ 
+ REMOVIDO:
+    - Altura/peso não possuem um impacto real no jogo, pois as estatísticas de REB (rebotes), BLK (bloqueios)
+        e STL (roubos) já capturam isso muito melhor. Um jogador baixo pode ter um poder de impulsão no pulo
+        maior que um jogador que é mais alto que ele, por exemplo;
+    - Informações como ano/mês/dia de nascimento, informações do draft, escola e nacionalidade não fazem
+        nenhum sentido no cenário de jogo;
+
+ MANTIDO:
+    - League, Season, Stage, Player e Team: interessantes para contextualizar o jogador;
+    - GP e MIN: interessantes para analisar minutos jogados por jogo (minutos/jogo);
+    - FGM e FGA: interessantes para calcular o aproveitamento de arremessos em quadra (FG% = FGM / FGA);
+    - 3PM e 3PA: interessantes para calcular o aproveitamento de arremessos de bolas de três (3P% = 3PM / 3PA);
+    - FTM e FTA: interessantes para calcular o aproveitamento de arremessos livres (FT% = FTM / FTA);
+    - ORB, DRB e REB: jogadores bons de rebote ajudam quando o time está perdendo (possuem mais posses de bola);
+    - AST, STL e BLK: estatísticas de criação de jogadas e defesa (muito úteis para ajudar em um cenário de derrota);
+    - PTS (junto com MIN e GP): análisar pontos por jogo, pontos por minuto, uso ofensivo, etc.;
+    - TOV e PF: análise de posses desperdiçadas e faltas (úteis se o jogador erra muito ou se comete muitas faltas).
+
+4. 
+==========================================================
