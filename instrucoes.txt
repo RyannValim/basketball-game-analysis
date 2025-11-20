@@ -1,66 +1,267 @@
-PASSO A PASSO GERAL DE COMO BAIXAR E REALIZAR O PROCESSO DE ANÁLISE E TREINAMENTO DA REDE NEURAL.
+PASSO A PASSO GERAL DE COMO BAIXAR, ANALISAR E PREPARAR O DATASET PARA
+TREINAMENTO DA REDE NEURAL.
 
 Muito importante: executar os arquivos pela numeração para obter o melhor resultado.
 
 ===========================================================================
-1. CONFIGURAÇÕES DO AMBIENTE E DOWNLOAD DO DATASET:
- 1.1. Primeiro, importar a API do Kaggle no código Python "pip install kaggle".
 
- 1.2. Criar o token de acesso em kaggle.com.
-    - Perfil > Settings > Create New Token (retornará "kaggle.json" para download);
-    - Salvar o arquivo de retorno em C:\Users\<SEU-USER>\.kaggle\. (se não tiver a .kaggle, crie!).
+1. CONFIGURAÇÕES DO AMBIENTE E DOWNLOAD DO DATASET
+--------------------------------------------------
 
- 1.3. Importar a api do kaggle: "from kaggle import api".
+1.1. Instalar a API do Kaggle:
+     pip install kaggle
 
- 1.4. Escolher o dataset a ser utilizado.
-    - Importante: o link deve ser algo do tipo -> "kaggle.com/datasets/<NOME-DO-CRIADOR>/<NOME-DO-DATASET>".
+1.2. Criar o token de acesso no Kaggle:
+     - Acessar kaggle.com → Perfil → Settings → Create New Token
+     - Isso gera o arquivo "kaggle.json"
+     - Salvar o arquivo em:
+           C:\Users\<SEU-USUARIO>\.kaggle\kaggle.json
+       (Se a pasta .kaggle não existir, criar manualmente)
 
- 1.5. Salvar o link do dataset em uma constante, juntamente com o destino do download da .CSV.
-    - DATASET_REF = "<NOME-DO-CRIADOR>/<NOME-DO-DATASET>";
-    - DESTINO = "./<DADOS-BAIXADOS>" --> Criará uma pasta com os dados em formato .CSV.
+1.3. Importar a API no código Python:
+     from kaggle import api
 
- 1.6. Rodar o arquivo em python para realizar o download do dataset.
+1.4. Escolher o dataset:
+     O link deve ser no formato:
+     kaggle.com/datasets/<CRIADOR>/<NOME-DO-DATASET>
 
-===========================================================================
+1.5. Definir constantes para download:
+     - DATASET_REF = "<CRIADOR>/<NOME-DO-DATASET>"
+     - DESTINO = "./dados_jogadores"
 
-2. ANÁLISE INICIAL DO DATASET UTILIZANDO O PANDAS:
- 2.1. Importar o pandas com "import pandas as pd".
-
- 2.2. Salvar a csv do dataset para leitura em uma variável e printar:
-    - Head(): mostra as 5 primeiras linhas da dataset (entre 0 e 4);
-    - Columns: mostra todas as colunas que a csv contém;
-    - Info(): mostra os tipos que a csv contém (float, int e object), uso de memória e afins;
-    - "League", "Season" e "Stage" para mostrar valores únicos destas colunas.
-
-===========================================================================
-
-3. Filtrando o CSV para obter outro arquivo menor mostrando exatamente o que queremos:
-    - League: NBA, analisaremos a liga americana NBA;
-    - Season: 2016 - 2017, esta season foi escolhida pois os jogadores que atuaram nela são considerados os melhores do mundo;
-    - Stage: Playoffs, que é quando os times se classificam para jogar o mata-mata (pois têm jogos decisivos - mais interessantes).
+1.6. Rodar o arquivo de download (01_baixar_dataset.py)
+     Isso criará a pasta de dados e salvará o CSV do Kaggle.
 
 ===========================================================================
 
-4. Decisão de quais campos serão utilizados para o treinamento da rede. Alguns dados que foram removidos
-    podem causar ruídos no aprendizado, dificultar a generalização e fazerem o modelo aprender algo que
-    não influencia no resultado final esperado.
+2. ANÁLISE INICIAL DO DATASET (02_analise_inicial.py)
+-----------------------------------------------------
 
-    REMOVIDO:
-    - Altura/peso não possuem um impacto real no jogo, pois as estatísticas de REB (rebotes), BLK (bloqueios)
-        e STL (roubos) já capturam isso muito melhor. Um jogador baixo pode ter um poder de impulsão no pulo
-        maior que um jogador que é mais alto que ele, por exemplo;
-    - Informações como ano/mês/dia de nascimento, informações do draft, escola e nacionalidade não fazem
-        nenhum sentido no cenário de jogo;
+2.1. Importar o pandas:
+     import pandas as pd
 
-    MANTIDO:
-    - League, Season, Stage, Player e Team: interessantes para contextualizar o jogador;
-    - GP e MIN: interessantes para analisar minutos jogados por jogo (minutos/jogo);
-    - FGM e FGA: interessantes para calcular o aproveitamento de arremessos em quadra (FG% = FGM / FGA);
-    - 3PM e 3PA: interessantes para calcular o aproveitamento de arremessos de bolas de três (3P% = 3PM / 3PA);
-    - FTM e FTA: interessantes para calcular o aproveitamento de arremessos livres (FT% = FTM / FTA);
-    - ORB, DRB e REB: jogadores bons de rebote ajudam quando o time está perdendo (possuem mais posses de bola);
-    - AST, STL e BLK: estatísticas de criação de jogadas e defesa (muito úteis para ajudar em um cenário de derrota);
-    - PTS (junto com MIN e GP): análisar pontos por jogo, pontos por minuto, uso ofensivo, etc.;
-    - TOV e PF: análise de posses desperdiçadas e faltas (úteis se o jogador erra muito ou se comete muitas faltas).
+2.2. Carregar o CSV original e visualizar informações:
+     - df.head(): primeiros registros do dataset
+     - df.columns: nome de todas as colunas
+     - df.info(): tipos de dados, quantidades e uso de memória
+     - df["League"].unique(): valores únicos da coluna "League"
+     - df["Season"].unique(): valores únicos da coluna "Season"
+     - df["Stage"].unique(): valores únicos da coluna "Stage"
 
-==========================================================
+2.3. O objetivo é compreender a estrutura do dataset original e
+     identificar os valores corretos antes de realizar filtragens.
+
+===========================================================================
+
+3. FILTRAGEM DO DATASET (03_filtrar_dataset.py)
+------------------------------------------------
+
+Selecionamos apenas dados relevantes para o objetivo do projeto:
+
+- League = NBA  
+  (focamos na liga americana)
+
+- Season = 2016 - 2017  
+  (temporada escolhida por conter muitos dos principais jogadores em alto nível)
+
+- Stage = Playoffs  
+  (fase mata-mata, jogos decisivos, ideal para análise de impacto)
+
+Após a filtragem, o dataset resultante contém apenas
+jogadores que atuaram nos Playoffs da NBA 2016–2017.
+
+A saída desse processo gerou o arquivo:
+    ./dados_jogadores/nba_playoffs_2016_2017.csv
+
+===========================================================================
+
+4. SELEÇÃO DE CAMPOS (LIMPEZA DO DATASET)
+-----------------------------------------
+
+Algumas colunas foram removidas, pois não contribuem para o aprendizado do
+modelo e podem introduzir ruído. Outras foram mantidas por terem importância
+estatística ou contextual.
+
+-----------------------------------------------------------
+CAMPOS REMOVIDOS (não úteis para análise de impacto)
+-----------------------------------------------------------
+
+- Altura e peso (height, weight):
+  Apesar de serem atributos físicos, não representam impacto direto no jogo.
+  Rebotes, roubos e tocos já capturam melhor a performance do atleta.
+
+- birth_year, birth_month, birth_date
+  (informações biográficas irrelevantes)
+
+- nationality, high_school
+  (não influenciam desempenho em jogo)
+
+- draft_round, draft_pick, draft_team
+  (histórico de draft não impacta cenários de clutch)
+
+-----------------------------------------------------------
+CAMPOS MANTIDOS (úteis para análise e métricas)
+-----------------------------------------------------------
+
+- League, Season, Stage, Player, Team (contextualizam o jogador)
+- GP (jogos disputados)
+- MIN (minutos jogados)
+- FGM, FGA (arremessos convertidos e tentados → FG%)
+- 3PM, 3PA (bolas de 3 convertidas e tentadas → 3P%)
+- FTM, FTA (lances livres convertidos e tentados → FT%)
+- ORB, DRB, REB (rebotes ofensivos, defensivos e totais)
+- AST (assistências)
+- STL (roubos)
+- BLK (tocos)
+- PTS (pontos)
+- TOV (turnovers)
+- PF (faltas)
+
+Essas estatísticas descrevem objetivamente o impacto real do jogador
+em quadra, especialmente no contexto de viradas e decisões.
+
+===========================================================================
+
+5. CRIAÇÃO DE FEATURES PROPORCIONAIS E PERCENTUAIS (FEATURE ENGINEERING)
+-------------------------------------------------------------------------
+
+Após a limpeza, realizamos a etapa de "feature engineering".
+Transformamos estatísticas brutas em métricas proporcionais, percentuais e
+indicadores de eficiência. Isso permite que a rede neural receba dados
+mais significativos e comparáveis entre jogadores com diferentes tempos
+de quadra.
+
+-----------------------------------------------------------
+A) Métricas Por Minuto (Proporcionais)
+-----------------------------------------------------------
+
+Criadas dividindo o valor total pelo tempo em quadra (MIN):
+
+- PTS_per_min = PTS / MIN
+- REB_per_min = REB / MIN
+- AST_per_min = AST / MIN
+- STL_per_min = STL / MIN
+- BLK_per_min = BLK / MIN
+- TOV_per_min = TOV / MIN
+
+Essas métricas permitem comparar jogadores de forma justa mesmo que
+tenham jogado minutos diferentes.
+
+-----------------------------------------------------------
+B) Aproveitamentos Percentuais
+-----------------------------------------------------------
+
+- FG_pct = FGM / FGA   (Field Goal %)
+- 3P_pct = 3PM / 3PA   (% de acerto em bolas de 3)
+- FT_pct = FTM / FTA   (lances livres)
+
+Divisões por zero foram tratadas com fillna(0).
+
+-----------------------------------------------------------
+C) Objetivo
+-----------------------------------------------------------
+
+Criar um conjunto de features matematicamente relevantes que representem:
+
+- Eficiência ofensiva e defensiva
+- Produção real por minuto
+- Risco (turnovers)
+- Capacidade de impacto em clutch
+
+-----------------------------------------------------------
+D) Salvamento
+-----------------------------------------------------------
+
+As features foram salvas em:
+
+    ./dados_jogadores/nba_playoffs_2017_2017_features.csv
+
+Dataset final preparado para a próxima etapa:
+NORMALIZAÇÃO E TREINAMENTO DA REDE NEURAL.
+
+===========================================================================
+
+6. NORMALIZAÇÃO DOS DADOS (06_normalizacao_dados.py)
+----------------------------------------------------
+
+Após a criação das features proporcionais e percentuais, realizamos a etapa de
+normalização dos dados. Normalizar é essencial para treinar redes neurais,
+pois cada feature possui escalas diferentes (por exemplo: PTS_per_min varia em
+torno de 0.1 a 0.9, enquanto MIN total pode chegar a centenas). Essa diferença
+pode prejudicar o aprendizado, já que valores maiores acabam dominando o erro
+durante o treinamento.
+
+Para resolver isso, aplicamos o método MinMaxScaler (0–1), que transforma todos
+os valores numéricos para o intervalo [0, 1]. Isso garante que todas as
+features tenham o mesmo peso e importância inicial dentro da rede neural.
+
+-----------------------------------------------------------
+A) SELEÇÃO DAS FEATURES NUMÉRICAS
+-----------------------------------------------------------
+
+Como o dataset final contém apenas estatísticas numéricas (todas as colunas
+categóricas já haviam sido removidas), utilizamos o comando:
+
+    df_numerico = df.select_dtypes(include=['float64', 'int64'])
+
+Esse comando seleciona automaticamente apenas as colunas numéricas, garantindo
+que somente valores que fazem sentido sejam normalizados.
+
+-----------------------------------------------------------
+B) APLICAÇÃO DO MINMAXSCALER (0–1)
+-----------------------------------------------------------
+
+Utilizamos o seguinte processo:
+
+1. Criamos o scaler:
+       scaler = MinMaxScaler()
+
+2. Ajustamos e transformamos os dados:
+       dados_normalizados = scaler.fit_transform(df_numerico)
+
+O resultado é uma matriz com todos os valores convertidos para o intervalo
+[0, 1], preservando proporcionalidade e relações entre os dados.
+
+-----------------------------------------------------------
+C) RECONSTRUÇÃO DO DATAFRAME NORMALIZADO
+-----------------------------------------------------------
+
+O array retornado pelo scaler é convertido novamente para DataFrame:
+
+    df_normalizado = pd.DataFrame(
+        dados_normalizados,
+        columns=df_numerico.columns
+    )
+
+Isso mantém os nomes das colunas originais e garante compatibilidade com as
+próximas etapas de treinamento.
+
+-----------------------------------------------------------
+D) SALVAMENTO DO DATASET NORMALIZADO
+-----------------------------------------------------------
+
+O dataset final normalizado foi salvo como:
+
+    ./dados_jogadores/nba_playoffs_2016_2017_normalizado.csv
+
+Este arquivo contém todas as features criadas anteriormente, agora dentro da
+mesma escala (0–1). Ele é o arquivo que deve ser usado no processo de treino
+da rede neural.
+
+-----------------------------------------------------------
+E) OBJETIVO DESSA ETAPA
+-----------------------------------------------------------
+
+A normalização é indispensável para redes neurais, pois:
+
+- impede que features com valores maiores dominem o aprendizado;
+- acelera a convergência do modelo durante o treino;
+- melhora a estabilidade dos cálculos internos;
+- permite que pesos e gradientes sejam distribuídos de forma equilibrada.
+
+Sem normalização, o treinamento poderia falhar, demorar demais ou aprender
+padrões incorretos.
+
+===========================================================================
+
+ 
