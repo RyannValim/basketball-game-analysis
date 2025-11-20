@@ -59,13 +59,8 @@ Muito importante: executar os arquivos pela numeração para obter o melhor resu
 Selecionamos apenas dados relevantes para o objetivo do projeto:
 
 - League = NBA  
-  (focamos na liga americana)
-
 - Season = 2016 - 2017  
-  (temporada escolhida por conter muitos dos principais jogadores em alto nível)
-
 - Stage = Playoffs  
-  (fase mata-mata, jogos decisivos, ideal para análise de impacto)
 
 Após a filtragem, o dataset resultante contém apenas
 jogadores que atuaram nos Playoffs da NBA 2016–2017.
@@ -78,64 +73,41 @@ A saída desse processo gerou o arquivo:
 4. SELEÇÃO DE CAMPOS (LIMPEZA DO DATASET)
 -----------------------------------------
 
-Algumas colunas foram removidas, pois não contribuem para o aprendizado do
-modelo e podem introduzir ruído. Outras foram mantidas por terem importância
-estatística ou contextual.
+Algumas colunas foram removidas por não influenciar o desempenho real em quadra.
+Outras foram mantidas por capturarem impacto estatístico do jogador.
 
 -----------------------------------------------------------
-CAMPOS REMOVIDOS (não úteis para análise de impacto)
+CAMPOS REMOVIDOS (não úteis para análise)
 -----------------------------------------------------------
 
-- Altura e peso (height, weight):
-  Apesar de serem atributos físicos, não representam impacto direto no jogo.
-  Rebotes, roubos e tocos já capturam melhor a performance do atleta.
-
+- altura e peso (height, weight)
 - birth_year, birth_month, birth_date
-  (informações biográficas irrelevantes)
-
 - nationality, high_school
-  (não influenciam desempenho em jogo)
-
 - draft_round, draft_pick, draft_team
-  (histórico de draft não impacta cenários de clutch)
 
 -----------------------------------------------------------
-CAMPOS MANTIDOS (úteis para análise e métricas)
+CAMPOS MANTIDOS (essenciais)
 -----------------------------------------------------------
 
-- League, Season, Stage, Player, Team (contextualizam o jogador)
-- GP (jogos disputados)
-- MIN (minutos jogados)
-- FGM, FGA (arremessos convertidos e tentados → FG%)
-- 3PM, 3PA (bolas de 3 convertidas e tentadas → 3P%)
-- FTM, FTA (lances livres convertidos e tentados → FT%)
-- ORB, DRB, REB (rebotes ofensivos, defensivos e totais)
-- AST (assistências)
-- STL (roubos)
-- BLK (tocos)
-- PTS (pontos)
-- TOV (turnovers)
-- PF (faltas)
-
-Essas estatísticas descrevem objetivamente o impacto real do jogador
-em quadra, especialmente no contexto de viradas e decisões.
+- Identificação: League, Season, Stage, Player, Team
+- Volume: GP, MIN
+- Arremessos: FGM, FGA, 3PM, 3PA, FTM, FTA
+- Rebotes: ORB, DRB, REB
+- Criação: AST
+- Defesa: STL, BLK
+- Pontuação: PTS
+- Penalidades: TOV, PF
 
 ===========================================================================
 
-5. CRIAÇÃO DE FEATURES PROPORCIONAIS E PERCENTUAIS (FEATURE ENGINEERING)
--------------------------------------------------------------------------
+5. FEATURE ENGINEERING (05_features_iniciais.py)
+-------------------------------------------------
 
-Após a limpeza, realizamos a etapa de "feature engineering".
-Transformamos estatísticas brutas em métricas proporcionais, percentuais e
-indicadores de eficiência. Isso permite que a rede neural receba dados
-mais significativos e comparáveis entre jogadores com diferentes tempos
-de quadra.
+Criamos novas features mais informativas para treinar a rede neural.
 
 -----------------------------------------------------------
-A) Métricas Por Minuto (Proporcionais)
+A) MÉTRICAS PROPORCIONAIS (por minuto)
 -----------------------------------------------------------
-
-Criadas dividindo o valor total pelo tempo em quadra (MIN):
 
 - PTS_per_min = PTS / MIN
 - REB_per_min = REB / MIN
@@ -144,250 +116,296 @@ Criadas dividindo o valor total pelo tempo em quadra (MIN):
 - BLK_per_min = BLK / MIN
 - TOV_per_min = TOV / MIN
 
-Essas métricas permitem comparar jogadores de forma justa mesmo que
-tenham jogado minutos diferentes.
-
 -----------------------------------------------------------
-B) Aproveitamentos Percentuais
+B) APROVEITAMENTOS PERCENTUAIS
 -----------------------------------------------------------
 
-- FG_pct = FGM / FGA   (Field Goal %)
-- 3P_pct = 3PM / 3PA   (% de acerto em bolas de 3)
-- FT_pct = FTM / FTA   (lances livres)
+- FG_pct = FGM / FGA
+- 3P_pct = 3PM / 3PA
+- FT_pct = FTM / FTA
 
-Divisões por zero foram tratadas com fillna(0).
-
------------------------------------------------------------
-C) Objetivo
------------------------------------------------------------
-
-Criar um conjunto de features matematicamente relevantes que representem:
-
-- Eficiência ofensiva e defensiva
-- Produção real por minuto
-- Risco (turnovers)
-- Capacidade de impacto em clutch
+Divisões impossíveis são tratadas com fillna(0).
 
 -----------------------------------------------------------
-D) Salvamento
+C) OBJETIVO
 -----------------------------------------------------------
 
-As features foram salvas em:
+Criar features comparáveis entre jogadores para capturar:
+- eficiência ofensiva
+- impacto defensivo
+- produção por minuto
+- risco (turnovers)
 
+-----------------------------------------------------------
+D) SALVAMENTO
+-----------------------------------------------------------
+
+Arquivo gerado:
     ./dados_jogadores/nba_playoffs_2017_2017_features.csv
-
-Dataset final preparado para a próxima etapa:
-NORMALIZAÇÃO E TREINAMENTO DA REDE NEURAL.
 
 ===========================================================================
 
-6. NORMALIZAÇÃO DOS DADOS + CRIAÇÃO DA EFICIÊNCIA (EFF)
-   (06_normalizacao_dados.py)
---------------------------------------------------------
+6. NORMALIZAÇÃO + CRIAÇÃO DA EFICIÊNCIA (06_normalizacao_dados.py)
+-------------------------------------------------------------------
 
-Após a criação das features proporcionais e percentuais, realizamos a etapa de
-normalização dos dados. Essa etapa é fundamental para preparar o dataset para o
-treinamento da rede neural, garantindo que todas as entradas tenham escalas
-compatíveis.
-
-Utilizamos o método MinMaxScaler (0–1), que transforma todas as colunas
-numéricas para o intervalo [0, 1]. Isso evita que valores maiores influenciem
-de forma desproporcional o aprendizado do modelo.
+Após criar as features, é necessário normalizar os dados e criar a métrica
+de impacto total (EFF), que será a variável alvo da rede neural.
 
 -----------------------------------------------------------
-A) SELEÇÃO DAS FEATURES NUMÉRICAS
+A) SELEÇÃO DE COLUNAS NUMÉRICAS
 -----------------------------------------------------------
-
-Como o dataset final contém apenas estatísticas numéricas, utilizamos:
 
     df_numerico = df.select_dtypes(include=['float64', 'int64'])
 
-Isso garante que apenas colunas relevantes sejam normalizadas.
-
 -----------------------------------------------------------
-B) APLICAÇÃO DO MINMAXSCALER (0–1)
+B) APLICAÇÃO DO MINMAXSCALER
 -----------------------------------------------------------
 
-1. Criamos o scaler:
-       scaler = MinMaxScaler()
+Escala os dados para o intervalo [0, 1]:
 
-2. Ajustamos e transformamos:
-       dados_normalizados = scaler.fit_transform(df_numerico)
-
-O resultado é uma matriz com todas as features convertidas para a escala 0–1.
+    scaler = MinMaxScaler()
+    dados_normalizados = scaler.fit_transform(df_numerico)
 
 -----------------------------------------------------------
 C) RECONSTRUÇÃO DO DATAFRAME NORMALIZADO
 -----------------------------------------------------------
+
+Preserva os nomes das features:
 
     df_normalizado = pd.DataFrame(
         dados_normalizados,
         columns=df_numerico.columns
     )
 
-Isso garante que as colunas originais sejam preservadas com seus nomes corretos.
-
 -----------------------------------------------------------
 D) CRIAÇÃO DA MÉTRICA DE EFICIÊNCIA (EFF)
 -----------------------------------------------------------
 
-Após a normalização, criamos a métrica EFF, uma medida de impacto total do
-jogador. A fórmula utilizada segue o padrão da NBA, adaptada para valores
-normalizados:
+Fórmula adaptada da NBA:
 
     EFF = (PTS + REB + AST + STL + BLK)
           - ((FGA - FGM) + (FTA - FTM) + TOV_per_min)
 
-Essa métrica combina aspectos ofensivos, defensivos e penalidades, servindo como
-o target (variável de saída) para o treinamento da rede neural.
-
 -----------------------------------------------------------
-E) SALVAMENTO DO DATASET FINAL NORMALIZADO
+E) SALVAMENTO DOS RESULTADOS
 -----------------------------------------------------------
 
-O dataset final, com todas as features normalizadas e a coluna EFF criada, foi
-salvo em:
+- Dataset final:
+      ./dados_jogadores/nba_playoffs_2016_2017_normalizado.csv
 
-    ./dados_jogadores/nba_playoffs_2016_2017_normalizado.csv
-
-Este é o arquivo oficial utilizado na etapa 07 (treinamento da rede neural).
+- Scaler salvo:
+      ./dados_jogadores/scaler_normalizacao.pkl
 
 -----------------------------------------------------------
-F) OBJETIVO DESSA ETAPA
+F) OBJETIVO
 -----------------------------------------------------------
 
 A normalização:
-- evita que features de maior magnitude dominem o treinamento;
-- melhora a estabilidade e velocidade de convergência da rede neural;
-- permite que todas as métricas funcionem em uma mesma escala;
-- prepara o dataset para ser usado diretamente como entrada no modelo.
+- evita dominância de valores grandes
+- estabiliza o treinamento
+- coloca todas as features em mesma escala
+- prepara os dados para uso direto no PyTorch
 
 ===========================================================================
 
-7. TREINAMENTO DO MODELO DE REDE NEURAL (PyTorch)
-   (07_treinamento_rede.py)
------------------------------------------------------------
+7. TREINAMENTO DA REDE NEURAL (07_treinamento_rede.py)
+------------------------------------------------------
 
-Após as etapas de criação de features e normalização, iniciou-se o
-treinamento da rede neural MLP utilizando a biblioteca PyTorch,
-conforme exigido pelos requisitos do projeto.
-
-O objetivo é prever a eficiência (EFF) dos jogadores com base em suas
-estatísticas normalizadas.
+Utilizando PyTorch, foi treinada uma MLP para prever a eficiência (EFF).
 
 -----------------------------------------------------------
-A) PREPARAÇÃO DOS DADOS PARA TREINO
+A) PREPARAÇÃO DOS DADOS
 -----------------------------------------------------------
 
-Foram executados os passos:
-
-1. Separação das variáveis de entrada (X) e saída (y):
-       X = todas as features numéricas normalizadas
-       y = coluna EFF
-
-2. Divisão dos dados em treino e teste:
-       80% para treino, 20% para teste
-
-3. Conversão para tensores PyTorch:
-       torch.tensor(..., dtype=torch.float32)
-
-Isso permite que os dados sejam usados diretamente na rede neural.
+- X = features normalizadas
+- y = coluna EFF
+- divisão treino/teste → 80%/20%
+- conversão para tensores PyTorch
 
 -----------------------------------------------------------
-B) ARQUITETURA DA REDE NEURAL (MLP)
+B) ARQUITETURA DA REDE
 -----------------------------------------------------------
 
-A rede utilizada possui o formato:
+Entrada: 26 features  
+Camadas:
+- Linear(26 → 64) + função de ativação
+- Linear(64 → 32) + função de ativação
+- Linear(32 → 1)  (saída)
 
-    Entrada (26 features)
-       ↓
-    Camada oculta 1 — 64 neurônios + função de ativação
-       ↓
-    Camada oculta 2 — 32 neurônios + função de ativação
-       ↓
-    Saída — 1 neurônio (valor da EFF prevista)
+Funções testadas:
+- ReLU
+- Tanh
 
-As funções de ativação foram parametrizadas, permitindo testar ReLU
-e Tanh conforme exigido no projeto.
-
-A camada de saída é linear, pois o problema é de regressão.
+Saída sem ativação → problema de regressão.
 
 -----------------------------------------------------------
 C) LOOP DE TREINAMENTO
 -----------------------------------------------------------
 
-Foi implementada a função `treinar_modelo`, contendo:
+- Loss: MSELoss  
+- Otimizador: Adam (η = 0.001)  
+- Épocas: 200  
+- Tamanho do lote: 16  
 
-- função de perda: MSELoss  
-- otimizador: Adam  
-- taxa de aprendizado (η): 0.001  
-- 200 épocas de treino  
-- tamanho do lote: 16 (mini-batches)
-
-Durante o treinamento, o modelo faz:
-
-    forward → cálculo da perda → backpropagation → atualização dos pesos
-
-A cada 20 épocas é exibido o erro médio, atendendo ao requisito:
-
-> “Exibir o vetor de erros a cada iteração.”
+A cada 20 épocas, exibe a perda média.
 
 -----------------------------------------------------------
-D) TESTE DAS FUNÇÕES DE ATIVAÇÃO
+D) RESULTADOS
 -----------------------------------------------------------
 
-Foram treinados dois modelos:
+Curvas de perda geradas com Matplotlib.
 
-- MLP + ReLU
-- MLP + Tanh
-
-O desempenho foi monitorado separadamente e os vetores de perda foram
-armazenados para geração dos gráficos.
-
-===========================================================================
-
-8. AVALIAÇÃO DO MODELO E CURVA DE PERDA
------------------------------------------------------------
-
-Após o treinamento, as curvas de perda das duas funções de ativação
-foram plotadas em um mesmo gráfico utilizando Matplotlib.  
-Esse gráfico demonstra a velocidade de convergência e estabilidade
-de cada modelo.
-
------------------------------------------------------------
-A) CURVA DE PERDA (TRAIN LOSS)
------------------------------------------------------------
-
-O gráfico gerado contém:
-
-- eixo X: número de épocas  
-- eixo Y: perda média (MSE)  
-- duas curvas: ReLU e Tanh  
-
-A ReLU apresentou convergência mais rápida e menor perda final,
-o que confirma seu bom desempenho em redes profundas.
-
------------------------------------------------------------
-B) AVALIAÇÃO NO CONJUNTO DE TESTE
------------------------------------------------------------
-
-Para verificar a capacidade de generalização, foram calculadas:
-
-- MSE (Mean Squared Error)
-- R² (coeficiente de determinação)
-
-Resultados obtidos:
+Desempenho final:
 
     ReLU → MSE = 0.001007 | R² = 0.9971  
     Tanh → MSE = 0.001708 | R² = 0.9951  
 
-Esse desempenho indica que o modelo explica aproximadamente 99% da
-variação da eficiência real dos jogadores no conjunto de teste,
-sendo adequado para previsões futuras.
+ReLU escolhido como modelo final.
 
-A ReLU foi escolhida como modelo final por apresentar:
-- menor perda,
-- maior R²,
-- e maior estabilidade durante o treinamento.
+===========================================================================
+
+8. PREVISÕES, SIMULAÇÃO DE JOGO E ESCOLHA DO MELHOR JOGADOR
+   (08_previsoes.py)
+------------------------------------------------------------------
+
+Esta etapa utiliza o modelo treinado (arquitetura MLP + ReLU) para realizar
+previsões reais de eficiência (EFF) e simular um cenário de jogo — requisito
+fundamental para transformar o modelo em uma ferramenta aplicada ao basquete.
+
+O arquivo 08_previsoes.py é responsável por:
+
+    ✓ carregar o modelo treinado (ReLU)  
+    ✓ carregar o scaler usado na normalização    
+    ✓ carregar o dataset real dos jogadores dos Playoffs 2016–2017  
+    ✓ prever EFF para jogadores individuais ou para um time inteiro  
+    ✓ simular um cenário de jogo (tempo, placar, jogadores em quadra)  
+    ✓ recomendar o melhor jogador do banco segundo o modelo  
+    ✓ gerar um gráfico destacando o jogador recomendado  
+
+Esta etapa converte o modelo em uma ferramenta prática capaz de responder:
+"Quem deve entrar em quadra agora para tentar virar o jogo?"
+
+---------------------------------------------------------------------------
+A) CARREGAMENTO DO MODELO E DO SCALER
+---------------------------------------------------------------------------
+
+O arquivo carrega:
+
+- modelo_eff_relu.pth: pesos do modelo treinado
+- scaler_normalizacao.pkl: scaler usado no arquivo 06
+
+Isso garante que **novos dados** passem pela **mesma normalização** usada no treino,
+evitando previsões incorretas.
+
+---------------------------------------------------------------------------
+B) FUNÇÃO DE PREVISÃO PARA VÁRIOS JOGADORES
+---------------------------------------------------------------------------
+
+A função:
+
+    prever_jogadores(df)
+
+Recebe um DataFrame contendo as features numéricas (GP, MIN, FGM, 3PA, etc.),
+aplica o scaler, passa no modelo e retorna a coluna:
+
+    EFF_prevista
+
+Ela funciona para:
+
+    - 1 jogador
+    - vários jogadores
+    - um time inteiro
+
+---------------------------------------------------------------------------
+C) FUNÇÃO DE ESCOLHA DO MELHOR JOGADOR
+---------------------------------------------------------------------------
+
+A função:
+
+    escolher_melhor_jogador(df)
+
+Ordena os jogadores pelas suas EFF_prevista e retorna:
+
+    - nome do melhor jogador
+    - seu valor de EFF prevista
+    - explicação em forma de texto para o relatório
+
+Exemplo de saída:
+
+“Stephen Curry (GSW) é o melhor candidato para entrar, com EFF prevista de 2.750,
+indicando maior impacto ofensivo e defensivo segundo o modelo treinado.”
+
+---------------------------------------------------------------------------
+D) SIMULAÇÃO DE CENÁRIO DE JOGO
+---------------------------------------------------------------------------
+
+A função:
+
+    simular_cenario_jogo(time, minutos_restantes, diferenca_pontos)
+
+simula uma situação realista:
+
+1. Seleciona todos os jogadores do time no dataset real  
+2. Sorteia 5 jogadores que estão em quadra  
+3. Define o banco como os demais jogadores  
+4. Usa o modelo para prever a EFF de cada jogador do banco  
+5. Recomenda o jogador ideal para entrar em quadra  
+6. Exibe um gráfico comparando EFF de todo o time
+
+Os argumentos controlam o contexto:
+
+- `minutos_restantes` → ex.: faltando 4 minutos  
+- `diferenca_pontos` → ex.: time está perdendo por −11  
+
+Isso permite simular situações como:
+
+    “Golden State Warriors está perdendo por 11 pontos faltando 4 minutos.
+     Quem deve entrar para tentar virar o jogo?”
+
+---------------------------------------------------------------------------
+E) GRÁFICO DE EFF COM O JOGADOR RECOMENDADO
+---------------------------------------------------------------------------
+
+Após a simulação, é gerado automaticamente um gráfico de barras contendo:
+
+- EFF prevista de cada jogador do time
+- barras azuis para todos os jogadores
+- barra vermelha destacando o recomendado
+- linha tracejada representando o valor recomendado
+
+Exemplo de leitura:
+
+“Draymond Green aparece como a barra vermelha com maior EFF prevista, logo ele é o jogador ideal para entrar.”
+
+---------------------------------------------------------------------------
+F) EXECUÇÃO EXEMPLO
+---------------------------------------------------------------------------
+
+    simular_cenario_jogo("GSW", minutos_restantes=4, diferenca_pontos=-11)
+
+Saída típica:
+
+- lista dos jogadores disponíveis
+- lista dos 5 jogadores em quadra (sorteados dinamicamente)
+- situação do jogo
+- recomendação do melhor jogador
+- gráfico de impacto de todo o time
+
+---------------------------------------------------------------------------
+
+OBJETIVO FINAL DA ETAPA
+---------------------------------------------------------------------------
+
+Esta etapa conecta **todos os blocos do projeto**, permitindo:
+
+- utilizar o modelo e as features criadas  
+- realizar previsões reais de desempenho  
+- aplicar o modelo para tomada de decisão em jogo  
+- analisar “quem entra para tentar virar o placar”  
+- visualizar graficamente o impacto de cada jogador  
+
+Com isso, o projeto deixa de ser apenas estatístico e se torna uma ferramenta
+**inteligente, aplicada e interpretável**, cumprindo todos os requisitos de
+Sistemas Inteligentes.
 
 ===========================================================================
