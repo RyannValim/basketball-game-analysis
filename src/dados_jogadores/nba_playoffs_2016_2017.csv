@@ -1,0 +1,154 @@
+League,Season,Stage,Player,Team,GP,MIN,FGM,FGA,3PM,3PA,FTM,FTA,TOV,PF,ORB,DRB,REB,AST,STL,BLK,PTS,birth_year,birth_month,birth_date,height,height_cm,weight,weight_kg,nationality,high_school,draft_round,draft_pick,draft_team
+NBA,2016 - 2017,Playoffs,LeBron James,CLE,18,744.2,217,384,44,107,113,162,72,43,19,145,164,141,35,23,591,1984.0,Dec,"Dec 30, 1984",6-8,203.0,250.0,113.0,United States,St. Vincent St. Mary High School,1.0,1.0,Cleveland Cavaliers
+NBA,2016 - 2017,Playoffs,Stephen Curry,GSW,17,600.8,151,312,72,172,103,114,58,37,23,84,107,114,34,4,477,1988.0,Mar,"Mar 14, 1988",6-3,191.0,190.0,86.0,United States,Charlotte Christian School,1.0,7.0,Golden State Warriors
+NBA,2016 - 2017,Playoffs,Kyrie Irving,CLE,18,653.3,173,370,44,118,76,84,48,38,13,38,51,95,23,8,466,1992.0,Mar,"Mar 23, 1992",6-3,191.0,193.0,88.0,United States / Australia,St. Patrick High School,1.0,1.0,Cleveland Cavaliers
+NBA,2016 - 2017,Playoffs,Kevin Durant,GSW,15,533.1,149,268,38,86,92,103,38,39,16,103,119,64,12,20,428,1988.0,Sep,"Sep 29, 1988",6-9,206.0,240.0,109.0,United States,Montrose Christian School,1.0,2.0,Seattle SuperSonics
+NBA,2016 - 2017,Playoffs,John Wall,WAS,13,506.5,127,281,21,61,78,93,55,26,7,41,48,134,21,15,353,1990.0,Sep,"Sep 6, 1990",6-4,193.0,210.0,95.0,United States,Word of God Christian Academy,1.0,1.0,Washington Wizards
+NBA,2016 - 2017,Playoffs,Isaiah Thomas,BOS,15,520.7,111,261,36,108,91,111,50,35,5,42,47,100,13,2,349,1989.0,Feb,"Feb 7, 1989",5-9,175.0,185.0,84.0,United States,South Kent School,2.0,30.0,Sacramento Kings
+NBA,2016 - 2017,Playoffs,Kawhi Leonard,SAS,12,429.1,106,202,25,55,95,102,26,21,19,74,93,55,20,6,332,1991.0,Jun,"Jun 29, 1991",6-7,201.0,230.0,104.0,United States,Martin Luther King High School,1.0,15.0,Indiana Pacers
+NBA,2016 - 2017,Playoffs,Bradley Beal,WAS,13,505.4,122,259,29,101,50,61,27,38,15,29,44,35,21,8,323,1993.0,Jun,"Jun 28, 1993",6-3,191.0,207.0,94.0,United States,Chaminade College Preparatory School,1.0,3.0,Washington Wizards
+NBA,2016 - 2017,Playoffs,James Harden,HOU,11,406.7,90,218,32,115,101,115,59,43,7,53,60,93,21,5,313,1989.0,Aug,"Aug 26, 1989",6-5,196.0,220.0,100.0,United States,Artesia High School,1.0,3.0,Oklahoma City Thunder
+NBA,2016 - 2017,Playoffs,Kevin Love,CLE,18,577.6,95,218,50,111,63,75,31,46,36,155,191,30,21,16,303,1988.0,Sep,"Sep 7, 1988",6-10,208.0,251.0,114.0,United States,Lake Oswego High School,1.0,5.0,Memphis Grizzlies
+NBA,2016 - 2017,Playoffs,Avery Bradley,BOS,18,644.7,120,272,40,114,21,27,31,40,18,53,71,41,23,3,301,1990.0,Nov,"Nov 26, 1990",6-2,188.0,180.0,82.0,United States,Findlay College Prep,1.0,19.0,Boston Celtics
+NBA,2016 - 2017,Playoffs,Al Horford,BOS,18,609.9,111,190,27,52,22,29,33,33,31,87,118,97,15,14,271,1986.0,Jun,"Jun 3, 1986",6-10,208.0,245.0,111.0,Dominican Republic / United States,Grand Ledge High School,1.0,3.0,Atlanta Hawks
+NBA,2016 - 2017,Playoffs,Gordon Hayward,UTA,11,410.7,83,188,28,68,71,76,24,23,7,60,67,37,10,3,265,1990.0,Mar,"Mar 23, 1990",6-8,203.0,225.0,102.0,United States,Brownsburg High School,1.0,9.0,Utah Jazz
+NBA,2016 - 2017,Playoffs,LaMarcus Aldridge,SAS,16,537.3,110,240,2,14,42,55,28,41,43,76,119,24,10,16,264,1985.0,Jul,"Jul 19, 1985",6-11,211.0,265.0,120.0,United States,Seagoville High School,1.0,2.0,Chicago Bulls
+NBA,2016 - 2017,Playoffs,Klay Thompson,GSW,17,595.6,94,237,41,106,26,33,25,44,11,55,66,35,14,5,255,1990.0,Feb,"Feb 8, 1990",6-7,201.0,215.0,98.0,United States,Santa Margarita Catholic High School,1.0,11.0,Golden State Warriors
+NBA,2016 - 2017,Playoffs,Jae Crowder,BOS,18,596.0,87,200,31,88,40,48,12,52,20,95,115,48,19,6,245,1990.0,Jul,"Jul 6, 1990",6-6,198.0,235.0,107.0,United States,Villa Rica High School,2.0,4.0,Cleveland Cavaliers
+NBA,2016 - 2017,Playoffs,DeMar DeRozan,TOR,10,373.2,76,175,1,15,71,80,25,26,4,45,49,34,14,0,224,1989.0,Aug,"Aug 7, 1989",6-7,201.0,220.0,100.0,United States,Compton High School,1.0,9.0,Toronto Raptors
+NBA,2016 - 2017,Playoffs,Draymond Green,GSW,17,592.5,72,161,32,78,46,67,35,60,20,135,155,110,32,28,222,1990.0,Mar,"Mar 4, 1990",6-7,201.0,230.0,104.0,United States,Saginaw High School,2.0,5.0,Golden State Warriors
+NBA,2016 - 2017,Playoffs,Russell Westbrook,OKC,5,194.5,59,152,13,49,56,70,30,16,9,49,58,54,12,2,187,1988.0,Nov,"Nov 12, 1988",6-3,191.0,200.0,91.0,United States,Leuzinger High School,1.0,4.0,Seattle SuperSonics
+NBA,2016 - 2017,Playoffs,Chris Paul,LAC,7,260.2,67,135,14,38,29,33,19,24,4,31,35,69,12,1,177,1985.0,May,"May 6, 1985",6-0,183.0,175.0,79.0,United States,West Forsyth High School,1.0,4.0,New Orleans Pelicans
+NBA,2016 - 2017,Playoffs,Kelly Olynyk,BOS,18,346.4,64,125,15,47,22,30,22,47,14,43,57,34,13,14,165,1991.0,Apr,"Apr 19, 1991",7-0,213.0,240.0,109.0,Canada,Kamloops High School,1.0,13.0,Dallas Mavericks
+NBA,2016 - 2017,Playoffs,Patty Mills,SAS,16,416.4,57,140,32,89,19,22,21,33,5,29,34,43,13,1,165,1988.0,Aug,"Aug 11, 1988",6-0,183.0,180.0,82.0,Australia,Australian Institute of Sport,2.0,25.0,Portland Trail Blazers
+NBA,2016 - 2017,Playoffs,Otto Porter,WAS,13,428.1,58,109,11,39,31,35,10,26,15,74,89,23,22,7,158,1993.0,Jun,"Jun 3, 1993",6-8,203.0,198.0,90.0,United States,Scott County Central High School,1.0,3.0,Washington Wizards
+NBA,2016 - 2017,Playoffs,Jonathon Simmons,SAS,15,305.7,62,136,13,37,21,31,11,30,9,19,28,29,9,2,158,1989.0,Sep,"Sep 14, 1989",6-6,198.0,195.0,88.0,United States,Smiley High School ,,,
+NBA,2016 - 2017,Playoffs,Markieff Morris,WAS,13,373.2,59,145,14,38,25,31,21,46,18,65,83,22,12,17,157,1989.0,Sep,"Sep 2, 1989",6-10,208.0,245.0,111.0,United States,APEX Academy,1.0,13.0,Phoenix Suns
+NBA,2016 - 2017,Playoffs,Marcus Smart,BOS,18,537.8,47,134,29,73,32,50,38,51,23,62,85,85,27,16,155,1994.0,Mar,"Mar 6, 1994",6-4,193.0,220.0,100.0,United States,Marcus High School,1.0,6.0,Boston Celtics
+NBA,2016 - 2017,Playoffs,Giannis Antetokounmpo,MIL,6,243.0,60,112,4,10,25,46,20,21,10,47,57,24,13,10,149,1994.0,Dec,"Dec 6, 1994",6-11,211.0,242.0,110.0,Greece / Nigeria,,1.0,15.0,Milwaukee Bucks
+NBA,2016 - 2017,Playoffs,Tristan Thompson,CLE,18,561.5,54,92,0,0,40,60,21,36,69,81,150,26,9,13,148,1991.0,Mar,"Mar 13, 1991",6-10,208.0,238.0,108.0,Canada,Findlay College Prep,1.0,4.0,Cleveland Cavaliers
+NBA,2016 - 2017,Playoffs,Mike Conley,MEM,6,223.6,50,103,17,38,31,37,12,11,1,19,20,42,10,3,148,1987.0,Oct,"Oct 11, 1987",6-1,185.0,175.0,79.0,United States,Lawrence North High School,1.0,4.0,Memphis Grizzlies
+NBA,2016 - 2017,Playoffs,Dennis Schroder,ATL,6,211.5,50,110,17,40,31,37,10,19,4,10,14,46,6,0,148,1993.0,Sep,"Sep 15, 1993",6-1,185.0,172.0,78.0,Germany,,1.0,17.0,Atlanta Hawks
+NBA,2016 - 2017,Playoffs,Paul Millsap,ATL,6,219.4,50,99,3,17,43,53,23,19,9,47,56,26,10,4,146,1985.0,Feb,"Feb 10, 1985",6-8,203.0,246.0,112.0,United States,Grambling Laboratory High School,2.0,17.0,Utah Jazz
+NBA,2016 - 2017,Playoffs,J.R. Smith,CLE,18,486.6,50,99,40,80,5,11,12,41,5,37,42,13,13,6,145,1985.0,Sep,"Sep 9, 1985",6-6,198.0,225.0,102.0,United States,Saint Benedict's Preparatory School,1.0,18.0,New Orleans Pelicans
+NBA,2016 - 2017,Playoffs,Serge Ibaka,TOR,10,306.5,60,130,12,38,11,13,11,37,9,56,65,14,4,17,143,1989.0,Sep,"Sep 18, 1989",6-10,208.0,235.0,107.0,Republic of the Congo / Spain,,1.0,24.0,Seattle SuperSonics
+NBA,2016 - 2017,Playoffs,Eric Gordon,HOU,11,358.2,51,121,27,70,13,18,14,20,5,38,43,22,8,6,142,1988.0,Dec,"Dec 25, 1988",6-4,193.0,215.0,98.0,United States,North Central High School,1.0,7.0,Los Angeles Clippers
+NBA,2016 - 2017,Playoffs,Joe Johnson,UTA,11,326.4,58,133,15,45,11,15,13,21,8,35,43,27,6,1,142,1981.0,Jun,"Jun 29, 1981",6-7,201.0,240.0,109.0,United States,Little Rock Central High School,1.0,10.0,Boston Celtics
+NBA,2016 - 2017,Playoffs,Lou Williams,HOU,11,271.6,50,118,12,39,26,29,14,17,7,23,30,14,7,1,138,1986.0,Oct,"Oct 27, 1986",6-1,185.0,175.0,79.0,United States,South Gwinnett High School,2.0,15.0,Philadelphia Sixers
+NBA,2016 - 2017,Playoffs,Jimmy Butler,CHI,6,238.7,46,108,6,23,38,47,15,10,9,35,44,26,10,5,136,1989.0,Sep,"Sep 14, 1989",6-8,203.0,232.0,105.0,United States,Tomball High School,1.0,30.0,Chicago Bulls
+NBA,2016 - 2017,Playoffs,Tony Parker,SAS,8,211.3,51,97,11,19,14,14,12,10,2,18,20,25,4,0,127,1982.0,May,"May 17, 1982",6-2,188.0,185.0,84.0,France,,1.0,28.0,San Antonio Spurs
+NBA,2016 - 2017,Playoffs,Kyle Lowry,TOR,8,300.4,43,93,13,38,27,33,17,26,3,22,25,47,12,4,126,1986.0,Mar,"Mar 25, 1986",6-1,185.0,196.0,89.0,United States,Cardinal Dougherty High School,1.0,24.0,Memphis Grizzlies
+NBA,2016 - 2017,Playoffs,George Hill,UTA,8,280.9,46,98,12,31,21,29,13,25,8,25,33,29,2,1,125,1986.0,May,"May 4, 1986",6-3,191.0,188.0,85.0,United States,Broad Ripple High School,1.0,26.0,San Antonio Spurs
+NBA,2016 - 2017,Playoffs,Danny Green,SAS,16,435.8,45,111,26,76,8,14,17,30,13,44,57,23,10,15,124,1987.0,Jun,"Jun 22, 1987",6-6,198.0,215.0,98.0,United States,St. Mary's High School,2.0,16.0,Cleveland Cavaliers
+NBA,2016 - 2017,Playoffs,Pau Gasol,SAS,16,365.4,50,114,6,18,17,24,18,35,39,75,114,31,7,15,123,1980.0,Jul,"Jul 6, 1980",7-0,213.0,250.0,113.0,Spain,,1.0,3.0,Atlanta Hawks
+NBA,2016 - 2017,Playoffs,Patrick Beverley,HOU,11,324.7,45,109,21,52,11,14,18,38,21,40,61,33,16,2,122,1988.0,Jul,"Jul 12, 1988",6-1,185.0,185.0,84.0,United States,John Marshall Metropolitan High School,2.0,12.0,Los Angeles Lakers
+NBA,2016 - 2017,Playoffs,Trevor Ariza,HOU,11,412.9,41,97,23,61,13,14,9,25,8,48,56,23,14,2,118,1985.0,Jun,"Jun 30, 1985",6-8,203.0,215.0,98.0,United States,Westchester High School,2.0,14.0,New York Knicks
+NBA,2016 - 2017,Playoffs,Clint Capela,HOU,11,286.2,46,82,0,1,24,39,8,28,26,70,96,12,8,28,116,1994.0,May,"May 18, 1994",6-10,208.0,240.0,109.0,Switzerland,INSEP Academy,1.0,25.0,Houston Rockets
+NBA,2016 - 2017,Playoffs,Marc Gasol,MEM,6,239.7,39,83,7,12,31,33,15,22,7,32,39,25,2,4,116,1985.0,Jan,"Jan 29, 1985",7-1,216.0,255.0,116.0,Spain,Lausanne Collegiate School,2.0,18.0,Los Angeles Lakers
+NBA,2016 - 2017,Playoffs,Andre Iguodala,GSW,16,419.4,46,101,8,42,15,26,16,29,9,56,65,51,14,7,115,1984.0,Jan,"Jan 28, 1984",6-6,198.0,215.0,98.0,United States,Lanphier High School,1.0,9.0,Philadelphia Sixers
+NBA,2016 - 2017,Playoffs,Bojan Bogdanovic,WAS,13,263.9,36,87,16,45,27,32,8,17,10,46,56,9,6,1,115,1989.0,Apr,"Apr 18, 1989",6-8,203.0,216.0,98.0,Bosnia and Herzegovina / Croatia,,2.0,1.0,Miami Heat
+NBA,2016 - 2017,Playoffs,Paul George,IND,4,171.6,34,88,18,42,26,30,13,13,5,30,35,29,7,2,112,1990.0,May,"May 2, 1990",6-9,206.0,220.0,100.0,United States,Pete Knight High School,1.0,10.0,Indiana Pacers
+NBA,2016 - 2017,Playoffs,Jonas Valanciunas,TOR,10,225.9,44,81,0,1,24,33,13,22,9,58,67,2,2,6,112,1992.0,May,"May 6, 1992",7-0,213.0,265.0,120.0,Lithuania,,1.0,5.0,Toronto Raptors
+NBA,2016 - 2017,Playoffs,Damian Lillard,POR,4,150.6,39,90,9,32,24,25,13,11,4,13,17,13,5,2,111,1990.0,Jul,"Jul 15, 1990",6-3,191.0,195.0,88.0,United States,Oakland High School,1.0,6.0,Portland Trail Blazers
+NBA,2016 - 2017,Playoffs,Ian Clark,GSW,16,219.5,40,79,13,36,16,17,11,17,4,22,26,11,6,0,109,1991.0,Mar,"Mar 7, 1991",6-3,191.0,175.0,79.0,United States,Germantown High School,,,
+NBA,2016 - 2017,Playoffs,DeAndre Jordan,LAC,7,264.3,43,61,0,1,22,56,17,29,25,76,101,5,3,6,108,1988.0,Jul,"Jul 21, 1988",6-11,211.0,265.0,120.0,United States,Christian Life Center,2.0,5.0,Los Angeles Clippers
+NBA,2016 - 2017,Playoffs,Manu Ginobili,SAS,16,284.2,40,97,9,40,17,23,12,28,10,29,39,39,16,2,106,1977.0,Jul,"Jul 28, 1977",6-6,198.0,205.0,93.0,Argentina,,2.0,28.0,San Antonio Spurs
+NBA,2016 - 2017,Playoffs,Marcin Gortat,WAS,13,408.6,47,93,0,0,11,18,17,40,52,91,143,24,5,20,105,1984.0,Feb,"Feb 17, 1984",6-11,211.0,240.0,109.0,Poland,,2.0,27.0,Phoenix Suns
+NBA,2016 - 2017,Playoffs,Kyle Korver,CLE,18,326.2,34,80,27,69,10,10,7,22,2,28,30,13,7,5,105,1981.0,Mar,"Mar 17, 1981",6-7,201.0,212.0,96.0,United States,Pella High School,2.0,22.0,New Jersey Nets
+NBA,2016 - 2017,Playoffs,Norman Powell,TOR,9,227.2,35,82,15,34,20,24,15,25,5,23,28,14,10,3,105,1993.0,May,"May 25, 1993",6-4,193.0,215.0,98.0,United States,Lincoln High School ,2.0,16.0,Milwaukee Bucks
+NBA,2016 - 2017,Playoffs,Rudy Gobert,UTA,9,246.1,40,63,0,0,24,50,9,30,22,67,89,11,9,12,104,1992.0,Jun,"Jun 26, 1992",7-1,216.0,245.0,111.0,France,,1.0,27.0,Denver Nuggets
+NBA,2016 - 2017,Playoffs,Ryan Anderson,HOU,11,335.7,36,92,17,60,14,16,9,24,15,42,57,7,4,2,103,1988.0,May,"May 6, 1988",6-10,208.0,240.0,109.0,United States,Oak Ridge High School ,1.0,21.0,New Jersey Nets
+NBA,2016 - 2017,Playoffs,Rodney Hood,UTA,11,277.0,37,105,13,50,11,18,10,30,1,29,30,12,5,0,98,1992.0,Oct,"Oct 20, 1992",6-8,203.0,205.0,93.0,United States,Meridian High School,1.0,23.0,Utah Jazz
+NBA,2016 - 2017,Playoffs,Gerald Green,BOS,13,192.4,34,72,21,45,8,9,7,21,2,18,20,9,3,1,97,1986.0,Jan,"Jan 26, 1986",6-7,201.0,205.0,93.0,United States,Gulf Shores Academy,1.0,18.0,Boston Celtics
+NBA,2016 - 2017,Playoffs,Terry Rozier,BOS,17,277.2,33,82,14,38,16,20,10,20,12,32,44,32,11,4,96,1994.0,Mar,"Mar 17, 1994",6-1,185.0,190.0,86.0,United States,Hargrave Military Academy ,1.0,16.0,Boston Celtics
+NBA,2016 - 2017,Playoffs,JaVale McGee,GSW,16,148.5,41,56,0,0,13,18,8,31,22,26,48,4,2,15,95,1988.0,Jan,"Jan 19, 1988",7-0,213.0,270.0,122.0,United States,Hales Franciscan,1.0,18.0,Washington Wizards
+NBA,2016 - 2017,Playoffs,Maybyner Nene,HOU,9,161.2,36,51,0,1,18,31,9,24,11,31,42,5,6,4,90,1982.0,Sep,"Sep 13, 1982",6-11,211.0,250.0,113.0,Brazil,Instituto Alvaro Guiao,1.0,7.0,New York Knicks
+NBA,2016 - 2017,Playoffs,Dwyane Wade,CHI,6,190.1,32,86,6,17,20,21,10,8,6,24,30,24,5,8,90,1982.0,Jan,"Jan 17, 1982",6-4,193.0,220.0,100.0,United States,Harold L. Richards High School,1.0,5.0,Miami Heat
+NBA,2016 - 2017,Playoffs,C.J. McCollum,POR,4,140.3,32,80,11,22,15,16,15,10,8,16,24,4,4,2,90,1991.0,Sep,"Sep 19, 1991",6-3,191.0,190.0,86.0,United States,Glen Oak High School,1.0,10.0,Portland Trail Blazers
+NBA,2016 - 2017,Playoffs,Channing Frye,CLE,12,154.1,31,60,20,39,6,7,2,11,0,22,22,13,3,4,88,1983.0,May,"May 17, 1983",7-0,213.0,255.0,116.0,United States,St. Mary's High School,1.0,8.0,New York Knicks
+NBA,2016 - 2017,Playoffs,Jamal Crawford,LAC,7,195.6,35,83,6,25,12,12,9,12,2,7,9,13,4,1,88,1980.0,Mar,"Mar 20, 1980",6-5,196.0,195.0,88.0,United States,Rainier Beach High School,1.0,8.0,Cleveland Cavaliers
+NBA,2016 - 2017,Playoffs,Khris Middleton,MIL,6,231.2,31,78,7,19,18,22,11,17,0,28,28,32,12,0,87,1991.0,Aug,"Aug 12, 1991",6-8,203.0,222.0,101.0,United States,Porter-Gaud High School,2.0,9.0,Detroit Pistons
+NBA,2016 - 2017,Playoffs,Jaylen Brown,BOS,17,214.8,34,71,5,23,12,18,13,26,12,24,36,13,6,2,85,1996.0,Oct,"Oct 24, 1996",6-7,201.0,220.0,100.0,United States,Joseph Wheeler High School,1.0,3.0,Boston Celtics
+NBA,2016 - 2017,Playoffs,Kyle Anderson,SAS,15,194.7,36,64,3,10,8,11,7,8,12,34,46,25,10,2,83,1993.0,Sep,"Sep 20, 1993",6-9,206.0,230.0,104.0,United States,St. Anthony High School,1.0,30.0,San Antonio Spurs
+NBA,2016 - 2017,Playoffs,Derrick Favors,UTA,11,224.8,36,62,0,0,11,23,4,25,15,45,60,10,8,6,83,1991.0,Jul,"Jul 15, 1991",6-10,208.0,265.0,120.0,United States,South Atlanta High School ,1.0,3.0,New Jersey Nets
+NBA,2016 - 2017,Playoffs,Greg Monroe,MIL,6,141.1,27,51,0,0,25,30,11,16,17,27,44,10,8,3,79,1990.0,Jun,"Jun 4, 1990",6-11,211.0,265.0,120.0,United States,Helen Cox High School,1.0,7.0,Detroit Pistons
+NBA,2016 - 2017,Playoffs,Cory Joseph,TOR,10,211.9,31,71,9,22,8,8,14,17,4,17,21,31,4,2,79,1991.0,Aug,"Aug 20, 1991",6-3,191.0,200.0,91.0,Canada,Findlay College Prep,1.0,29.0,San Antonio Spurs
+NBA,2016 - 2017,Playoffs,Zach Randolph,MEM,6,191.4,35,83,1,7,8,11,7,14,9,40,49,4,5,2,79,1981.0,Jul,"Jul 16, 1981",6-9,206.0,260.0,118.0,United States,Marion High School ,1.0,19.0,Portland Trail Blazers
+NBA,2016 - 2017,Playoffs,Deron Williams,CLE,18,262.3,28,64,12,31,10,11,17,29,3,20,23,38,10,1,78,1984.0,Jun,"Jun 26, 1984",6-3,191.0,200.0,91.0,United States,The Colony High School,1.0,3.0,Utah Jazz
+NBA,2016 - 2017,Playoffs,Zaza Pachulia,GSW,15,211.6,32,60,0,1,13,17,14,32,17,39,56,12,7,4,77,1984.0,Feb,"Feb 10, 1984",6-11,211.0,270.0,122.0,Georgia,,2.0,13.0,Orlando Magic
+NBA,2016 - 2017,Playoffs,Tim Hardaway Jr.,ATL,6,200.4,27,82,11,42,12,19,10,13,3,13,16,7,3,0,77,1992.0,Mar,"Mar 16, 1992",6-6,198.0,205.0,93.0,United States,Palmetto High School,1.0,24.0,New York Knicks
+NBA,2016 - 2017,Playoffs,David West,GSW,17,221.2,34,59,1,2,7,9,10,26,7,39,46,36,7,13,76,1980.0,Aug,"Aug 29, 1980",6-9,206.0,250.0,113.0,United States,Garner Magnet High School,1.0,18.0,New Orleans Pelicans
+NBA,2016 - 2017,Playoffs,Robin Lopez,CHI,6,162.1,34,52,0,0,8,8,8,13,28,15,43,5,3,6,76,1988.0,Apr,"Apr 1, 1988",7-0,213.0,275.0,125.0,United States,San Joaquin Memorial High School,1.0,15.0,Phoenix Suns
+NBA,2016 - 2017,Playoffs,Iman Shumpert,CLE,17,274.9,25,60,10,26,14,17,6,32,6,41,47,16,10,3,74,1990.0,Jun,"Jun 26, 1990",6-5,196.0,220.0,100.0,United States,Oak Park & River Forest High School,1.0,17.0,New York Knicks
+NBA,2016 - 2017,Playoffs,Shaun Livingston,GSW,14,219.9,34,59,0,0,5,7,10,24,10,19,29,20,5,2,73,1985.0,Sep,"Sep 11, 1985",6-7,201.0,192.0,87.0,United States,Peoria Central High School ,1.0,4.0,Los Angeles Clippers
+NBA,2016 - 2017,Playoffs,Joe Ingles,UTA,11,333.4,25,62,15,41,6,9,16,28,2,39,41,36,22,5,71,1987.0,Oct,"Oct 2, 1987",6-8,203.0,226.0,103.0,Australia,Australian Institute of Sport,,,
+NBA,2016 - 2017,Playoffs,"Kelly Oubre, Jr.",WAS,12,184.2,26,61,11,30,7,10,7,38,9,19,28,4,10,5,70,1995.0,Dec,"Dec 9, 1995",6-7,201.0,205.0,93.0,United States,Findlay College Prep,1.0,15.0,Atlanta Hawks
+NBA,2016 - 2017,Playoffs,Jeff Teague,IND,4,142.4,22,45,9,17,15,18,8,12,0,13,13,25,4,3,68,1988.0,Jun,"Jun 10, 1988",6-2,188.0,195.0,88.0,United States,Pike High School,1.0,19.0,Atlanta Hawks
+NBA,2016 - 2017,Playoffs,Taurean Prince,ATL,6,187.1,29,52,4,14,5,5,7,9,7,25,32,8,2,1,67,1994.0,Mar,"Mar 22, 1994",6-8,203.0,220.0,100.0,United States,Warren High School,1.0,12.0,Utah Jazz
+NBA,2016 - 2017,Playoffs,Lance Stephenson,IND,4,107.2,27,53,7,18,3,4,4,11,1,20,21,11,2,0,64,1990.0,Sep,"Sep 5, 1990",6-6,198.0,230.0,104.0,United States,Abraham Lincoln High School,2.0,10.0,Indiana Pacers
+NBA,2016 - 2017,Playoffs,J.J. Redick,LAC,7,205.7,19,50,9,26,17,20,13,17,0,12,12,6,2,0,64,1984.0,Jun,"Jun 24, 1984",6-4,193.0,200.0,91.0,United States,Cave Spring High School,1.0,11.0,Orlando Magic
+NBA,2016 - 2017,Playoffs,Boris Diaw,UTA,11,202.8,24,48,6,14,9,10,14,12,3,18,21,22,7,4,63,1982.0,Apr,"Apr 16, 1982",6-8,203.0,250.0,113.0,France,,1.0,21.0,Atlanta Hawks
+NBA,2016 - 2017,Playoffs,Dejounte Murray,SAS,11,168.2,23,61,0,3,17,25,16,14,4,23,27,27,16,1,63,1996.0,Sep,"Sep 19, 1996",6-5,196.0,175.0,79.0,United States,Rainier Beach High School,1.0,29.0,San Antonio Spurs
+NBA,2016 - 2017,Playoffs,David Lee,SAS,15,245.2,25,48,0,1,11,17,6,20,20,37,57,11,4,5,61,1983.0,Apr,"Apr 29, 1983",6-9,206.0,245.0,111.0,United States,Chaminade College Preparatory School,1.0,30.0,New York Knicks
+NBA,2016 - 2017,Playoffs,Patrick McCaw,GSW,15,180.8,21,48,8,23,11,13,3,14,10,23,33,16,9,3,61,1995.0,Oct,"Oct 25, 1995",6-7,201.0,185.0,84.0,United States,Montrose Christian School,2.0,8.0,Milwaukee Bucks
+NBA,2016 - 2017,Playoffs,Blake Griffin,LAC,3,99.4,25,51,4,6,7,7,6,2,3,15,18,7,2,1,61,1989.0,Mar,"Mar 16, 1989",6-10,208.0,250.0,113.0,United States,Oklahoma Christian School,1.0,1.0,Los Angeles Clippers
+NBA,2016 - 2017,Playoffs,Tony Snell,MIL,6,184.6,22,44,16,31,0,0,2,17,2,12,14,9,1,1,60,1991.0,Nov,"Nov 10, 1991",6-7,201.0,213.0,97.0,United States,Martin Luther King High School,1.0,20.0,Chicago Bulls
+NBA,2016 - 2017,Playoffs,Kent Bazemore,ATL,6,150.4,21,53,7,24,10,14,16,15,4,19,23,20,4,5,59,1989.0,Jul,"Jul 1, 1989",6-5,196.0,200.0,91.0,United States,Bertie High School,,,
+NBA,2016 - 2017,Playoffs,Andre Roberson,OKC,5,185.4,24,46,7,17,3,21,7,15,18,13,31,9,12,17,58,1991.0,Dec,"Dec 4, 1991",6-7,201.0,210.0,95.0,United States,Wagner High School,1.0,26.0,Minnesota Timberwolves
+NBA,2016 - 2017,Playoffs,Vince Carter,MEM,6,194.7,20,42,8,20,7,7,10,15,4,16,20,9,2,0,55,1977.0,Jan,"Jan 26, 1977",6-6,198.0,220.0,100.0,United States,Mainland High School,1.0,5.0,Golden State Warriors
+NBA,2016 - 2017,Playoffs,Richard Jefferson,CLE,14,178.5,16,38,5,19,18,28,8,30,10,15,25,7,2,3,55,1980.0,Jun,"Jun 21, 1980",6-7,201.0,233.0,106.0,United States,Moon Valley High School,1.0,13.0,Houston Rockets
+NBA,2016 - 2017,Playoffs,Malcolm Brogdon,MIL,6,183.2,22,55,10,21,0,0,12,12,3,23,26,21,3,2,54,1992.0,Dec,"Dec 11, 1992",6-5,196.0,229.0,104.0,United States,Greater Atlanta Christian School,2.0,6.0,Milwaukee Bucks
+NBA,2016 - 2017,Playoffs,Shelvin Mack,UTA,9,154.5,17,49,7,15,13,15,9,14,3,22,25,18,4,0,54,1990.0,Apr,"Apr 22, 1990",6-3,191.0,203.0,92.0,United States,Bryan Station High School,2.0,4.0,Washington Wizards
+NBA,2016 - 2017,Playoffs,Victor Oladipo,OKC,5,180.8,21,61,6,25,6,6,6,17,2,26,28,10,7,3,54,1992.0,May,"May 4, 1992",6-4,193.0,210.0,95.0,United States,DeMatha Catholic High School,1.0,2.0,Orlando Magic
+NBA,2016 - 2017,Playoffs,Luc Mbah a Moute,LAC,7,223.8,17,43,5,16,14,20,3,16,10,24,34,7,8,4,53,1986.0,Sep,"Sep 9, 1986",6-8,203.0,230.0,104.0,Cameroon,Montverde Academy,2.0,7.0,Milwaukee Bucks
+NBA,2016 - 2017,Playoffs,Nikola Mirotic,CHI,6,161.9,17,50,10,35,8,10,4,16,4,26,30,9,4,3,52,1991.0,Feb,"Feb 11, 1991",6-10,208.0,250.0,113.0,Montenegro / Spain,,1.0,23.0,Houston Rockets
+NBA,2016 - 2017,Playoffs,Jason Smith,WAS,13,156.9,19,39,3,10,10,14,10,30,10,20,30,4,2,8,51,1986.0,Mar,"Mar 2, 1986",7-0,213.0,240.0,109.0,United States,Platte Valley High School,1.0,20.0,Miami Heat
+NBA,2016 - 2017,Playoffs,P.J. Tucker,TOR,10,251.2,18,49,9,28,5,8,8,27,15,42,57,11,6,3,50,1985.0,May,"May 5, 1985",6-6,198.0,245.0,111.0,United States,Enloe High School,2.0,5.0,Toronto Raptors
+NBA,2016 - 2017,Playoffs,James Ennis,MEM,6,158.7,16,38,6,19,12,14,7,20,8,17,25,7,5,2,50,1990.0,Jul,"Jul 1, 1990",6-7,201.0,210.0,95.0,United States,Ventura High School,2.0,20.0,Atlanta Hawks
+NBA,2016 - 2017,Playoffs,Taj Gibson,OKC,5,118.3,21,35,0,0,7,8,8,13,3,15,18,3,1,0,49,1985.0,Jun,"Jun 24, 1985",6-9,206.0,232.0,105.0,United States,Calvary Christian High School,1.0,26.0,Chicago Bulls
+NBA,2016 - 2017,Playoffs,Dwight Howard,ATL,6,156.6,18,36,0,0,12,19,11,21,18,46,64,8,6,5,48,1985.0,Dec,"Dec 8, 1985",6-11,211.0,265.0,120.0,United States,Southwest Atlanta Christian Academy,1.0,1.0,Orlando Magic
+NBA,2016 - 2017,Playoffs,Thaddeus Young,IND,4,140.0,21,39,1,4,5,10,6,11,22,14,36,10,8,1,48,1988.0,Jun,"Jun 21, 1988",6-8,203.0,221.0,100.0,United States,Mitchell High School,1.0,12.0,Philadelphia Sixers
+NBA,2016 - 2017,Playoffs,Al-Farouq Aminu,POR,4,112.8,17,37,7,17,7,11,9,9,5,21,26,4,3,4,48,1990.0,Sep,"Sep 21, 1990",6-9,206.0,220.0,100.0,United States / Nigeria,Norcross High School,1.0,8.0,Los Angeles Clippers
+NBA,2016 - 2017,Playoffs,Jerami Grant,OKC,5,110.5,19,31,2,6,6,7,3,7,7,12,19,4,1,2,46,1994.0,Mar,"Mar 12, 1994",6-9,206.0,220.0,100.0,United States,DeMatha Catholic High School,2.0,9.0,Philadelphia Sixers
+NBA,2016 - 2017,Playoffs,Marreese Speights,LAC,7,97.9,16,37,7,20,7,10,3,13,4,16,20,3,2,3,46,1987.0,Aug,"Aug 4, 1987",6-10,208.0,255.0,116.0,United States,Hargrave Military Academy ,1.0,16.0,Philadelphia Sixers
+NBA,2016 - 2017,Playoffs,Matt Dellavedova,MIL,6,158.6,16,41,6,16,8,10,7,5,1,11,12,12,1,0,46,1990.0,Sep,"Sep 8, 1990",6-4,193.0,200.0,91.0,Australia,Australian Institute of Sport,,,
+NBA,2016 - 2017,Playoffs,Dewayne Dedmon,SAS,12,96.6,14,23,0,0,17,32,8,16,21,26,47,3,2,3,45,1989.0,Aug,"Aug 12, 1989",7-0,213.0,245.0,111.0,United States,Lancaster High School,,,
+NBA,2016 - 2017,Playoffs,Paul Zipser,CHI,6,136.0,15,33,6,16,8,8,7,12,3,18,21,3,1,1,44,1994.0,Feb,"Feb 18, 1994",6-8,203.0,226.0,103.0,Germany,,2.0,18.0,Chicago Bulls
+NBA,2016 - 2017,Playoffs,JaMychal Green,MEM,6,117.8,17,36,7,16,3,3,4,21,3,17,20,2,0,0,44,1990.0,Jun,"Jun 21, 1990",6-9,206.0,227.0,103.0,United States,St. Jude High School,,,
+NBA,2016 - 2017,Playoffs,Jonas Jerebko,BOS,12,128.0,15,31,5,15,8,8,6,13,7,22,29,12,5,3,43,1987.0,Mar,"Mar 2, 1987",6-10,208.0,231.0,105.0,Sweden,,2.0,9.0,Detroit Pistons
+NBA,2016 - 2017,Playoffs,Myles Turner,IND,4,133.1,19,44,0,6,5,8,6,15,6,21,27,3,7,5,43,1996.0,Mar,"Mar 24, 1996",6-11,211.0,250.0,113.0,United States,Trinity High School,1.0,11.0,Indiana Pacers
+NBA,2016 - 2017,Playoffs,DeMarre Carroll,TOR,10,154.6,15,37,7,22,5,9,5,13,4,23,27,5,8,5,42,1986.0,Jul,"Jul 27, 1986",6-8,203.0,215.0,98.0,United States,John Carroll Catholic High School,1.0,27.0,Memphis Grizzlies
+NBA,2016 - 2017,Playoffs,Evan Turner,POR,4,124.1,12,33,5,15,12,16,7,7,3,20,23,15,7,2,41,1988.0,Oct,"Oct 27, 1988",6-7,201.0,220.0,100.0,United States,St. Joseph High School,1.0,2.0,Philadelphia Sixers
+NBA,2016 - 2017,Playoffs,Steven Adams,OKC,5,157.0,18,28,0,0,4,11,4,14,17,17,34,7,6,9,40,1993.0,Jul,"Jul 20, 1993",7-0,213.0,265.0,120.0,New Zealand,Scots College,1.0,12.0,Oklahoma City Thunder
+NBA,2016 - 2017,Playoffs,Bobby Portis,CHI,6,120.8,17,33,6,13,0,0,6,10,5,31,36,7,3,3,40,1995.0,Feb,"Feb 10, 1995",6-11,211.0,250.0,113.0,United States,Hall High School,1.0,22.0,Chicago Bulls
+NBA,2016 - 2017,Playoffs,Andrew Harrison,MEM,6,118.8,13,29,5,13,8,9,3,14,4,7,11,13,3,1,39,1994.0,Oct,"Oct 28, 1994",6-4,193.0,210.0,95.0,United States,Fort Bend Travis High School,2.0,14.0,Phoenix Suns
+NBA,2016 - 2017,Playoffs,Raymond Felton,LAC,7,126.9,15,32,4,9,5,5,3,10,2,8,10,10,6,0,39,1984.0,Jun,"Jun 26, 1984",6-1,185.0,205.0,93.0,United States,Latta High School,1.0,5.0,Charlotte Hornets
+NBA,2016 - 2017,Playoffs,Brandon Jennings,WAS,13,178.2,14,36,2,13,7,8,8,13,5,14,19,24,2,0,37,1989.0,Sep,"Sep 23, 1989",6-1,185.0,170.0,77.0,United States,Oak Hill Academy,1.0,10.0,Milwaukee Bucks
+NBA,2016 - 2017,Playoffs,Amir Johnson,BOS,14,142.4,15,30,1,3,5,8,6,24,17,13,30,3,4,6,36,1987.0,May,"May 1, 1987",6-9,206.0,240.0,109.0,United States,Westchester High School,2.0,26.0,Detroit Pistons
+NBA,2016 - 2017,Playoffs,Davis Bertans,SAS,13,112.1,12,27,8,20,4,6,6,7,5,15,20,3,3,4,36,1992.0,Nov,"Nov 12, 1992",6-10,208.0,225.0,102.0,Latvia,,2.0,12.0,Indiana Pacers
+NBA,2016 - 2017,Playoffs,Thon Maker,MIL,6,116.4,12,31,2,10,9,11,8,18,8,11,19,12,5,11,35,1997.0,Feb,"Feb 25, 1997",7-1,216.0,221.0,100.0,South Sudan / Australia,Athlete Institute Prep,1.0,10.0,Milwaukee Bucks
+NBA,2016 - 2017,Playoffs,Isaiah Canaan,CHI,3,95.3,13,26,5,14,4,6,5,6,0,4,4,4,3,0,35,1991.0,May,"May 21, 1991",6-0,183.0,200.0,91.0,United States,Biloxi High School,2.0,4.0,Houston Rockets
+NBA,2016 - 2017,Playoffs,Patrick Patterson,TOR,10,184.8,10,36,8,26,6,6,6,4,1,19,20,20,7,2,34,1989.0,Mar,"Mar 14, 1989",6-9,206.0,230.0,104.0,United States,Huntington High School,1.0,14.0,Houston Rockets
+NBA,2016 - 2017,Playoffs,Tyler Zeller,BOS,11,78.2,13,25,0,0,6,8,4,7,8,11,19,8,0,2,32,1990.0,Jan,"Jan 17, 1990",7-0,213.0,259.0,117.0,United States,Washington High School,1.0,17.0,Dallas Mavericks
+NBA,2016 - 2017,Playoffs,Dante Exum,UTA,7,83.7,11,27,4,12,6,6,3,10,2,4,6,9,5,0,32,1995.0,Jul,"Jul 13, 1995",6-6,198.0,190.0,86.0,Australia,Australian Institute of Sport,1.0,5.0,Utah Jazz
+NBA,2016 - 2017,Playoffs,Maurice Harkless,POR,4,99.1,10,34,2,12,7,8,1,14,7,6,13,3,4,4,29,1993.0,May,"May 11, 1993",6-9,206.0,220.0,100.0,United States / Puerto Rico,South Kent School,1.0,15.0,Philadelphia Sixers
+NBA,2016 - 2017,Playoffs,C.J. Miles,IND,4,82.0,11,24,5,16,2,2,2,12,4,4,8,1,2,1,29,1987.0,Mar,"Mar 18, 1987",6-6,198.0,220.0,100.0,United States,Skyline High School ,2.0,4.0,Utah Jazz
+NBA,2016 - 2017,Playoffs,Jose Calderon,ATL,6,75.2,11,23,4,12,0,0,4,9,2,6,8,13,2,1,26,1981.0,Sep,"Sep 28, 1981",6-3,191.0,200.0,91.0,Spain,,,,
+NBA,2016 - 2017,Playoffs,Delon Wright,TOR,9,91.7,9,17,2,6,5,7,5,4,4,9,13,13,4,1,25,1992.0,Apr,"Apr 26, 1992",6-5,196.0,183.0,83.0,United States,Leuzinger High School,1.0,20.0,Toronto Raptors
+NBA,2016 - 2017,Playoffs,Doug McDermott,OKC,5,66.3,9,18,7,13,0,0,1,2,0,5,5,1,1,1,25,1992.0,Jan,"Jan 3, 1992",6-8,203.0,225.0,102.0,United States,Ames High School,1.0,11.0,Denver Nuggets
+NBA,2016 - 2017,Playoffs,Ersan Ilyasova,ATL,6,90.4,8,23,1,5,7,9,5,7,14,17,31,2,1,0,24,1987.0,May,"May 15, 1987",6-10,208.0,235.0,107.0,Turkey,,2.0,6.0,Milwaukee Bucks
+NBA,2016 - 2017,Playoffs,Alex Abrines,OKC,5,80.1,8,23,5,17,3,4,0,8,2,7,9,4,0,0,24,1993.0,Aug,"Aug 1, 1993",6-6,198.0,190.0,86.0,Spain,,2.0,2.0,Oklahoma City Thunder
+NBA,2016 - 2017,Playoffs,Austin Rivers,LAC,3,90.2,9,26,4,13,2,2,5,6,1,7,8,2,1,1,24,1992.0,Aug,"Aug 1, 1992",6-4,193.0,200.0,91.0,United States,Winter Park High School,1.0,10.0,New Orleans Pelicans
+NBA,2016 - 2017,Playoffs,Raulzinho Neto,UTA,9,60.4,8,13,3,6,4,4,3,8,0,7,7,4,1,1,23,1992.0,May,"May 19, 1992",6-1,185.0,179.0,81.0,Brazil,,2.0,17.0,Atlanta Hawks
+NBA,2016 - 2017,Playoffs,Wayne Selden,MEM,6,106.1,9,26,2,11,3,4,2,8,3,6,9,7,1,1,23,1994.0,Sep,"Sep 30, 1994",6-5,196.0,230.0,104.0,United States,Tilton School,,,
+NBA,2016 - 2017,Playoffs,Monta Ellis,IND,4,75.5,8,20,2,8,4,5,4,5,1,7,8,5,2,1,22,1985.0,Oct,"Oct 26, 1985",6-3,191.0,185.0,84.0,United States,Lanier High School,2.0,10.0,Golden State Warriors
+NBA,2016 - 2017,Playoffs,Allen Crabbe,POR,4,92.0,9,24,3,13,1,3,1,9,0,13,13,2,1,0,22,1992.0,Apr,"Apr 9, 1992",6-6,198.0,212.0,96.0,United States,Frederick K. C. Price III High School,2.0,1.0,Cleveland Cavaliers
+NBA,2016 - 2017,Playoffs,Paul Pierce,LAC,7,101.5,8,18,4,10,1,1,4,11,2,12,14,7,2,0,21,1977.0,Oct,"Oct 13, 1977",6-7,201.0,235.0,107.0,United States,Inglewood High School,1.0,10.0,Boston Celtics
+NBA,2016 - 2017,Playoffs,Bryn Forbes,SAS,6,72.8,6,21,2,9,6,6,2,5,0,6,6,3,0,1,20,1993.0,Jul,"Jul 23, 1993",6-3,191.0,195.0,88.0,United States,JW Sexton High School,,,
+NBA,2016 - 2017,Playoffs,Cristiano Felicio,CHI,6,82.1,9,15,0,0,1,2,7,16,7,19,26,2,3,2,19,1992.0,Jul,"Jul 7, 1992",6-10,208.0,280.0,127.0,Brazil,,,,
+NBA,2016 - 2017,Playoffs,Noah Vonleh,POR,4,100.2,8,18,0,0,2,5,6,11,9,20,29,8,1,4,18,1995.0,Aug,"Aug 24, 1995",6-9,206.0,250.0,113.0,United States,New Hampton School,1.0,9.0,Charlotte Hornets
+NBA,2016 - 2017,Playoffs,Mike Muscala,ATL,6,80.8,5,18,0,4,7,8,1,12,6,10,16,2,1,3,17,1991.0,Jul,"Jul 1, 1991",6-11,211.0,240.0,109.0,United States,Roseville High School,2.0,14.0,Dallas Mavericks
+NBA,2016 - 2017,Playoffs,Jason Terry,MIL,6,67.9,6,18,2,10,1,1,2,7,2,6,8,5,3,1,15,1977.0,Sep,"Sep 15, 1977",6-2,188.0,185.0,84.0,United States,Benjamin Franklin High School,1.0,10.0,Atlanta Hawks
+NBA,2016 - 2017,Playoffs,Ian Mahinmi,WAS,5,62.6,5,9,0,0,4,11,3,17,3,8,11,6,1,6,14,1986.0,Nov,"Nov 5, 1986",6-11,211.0,262.0,119.0,France,,1.0,28.0,San Antonio Spurs
+NBA,2016 - 2017,Playoffs,Troy Daniels,MEM,6,68.3,3,9,3,9,0,0,2,1,1,4,5,2,2,0,9,1991.0,Jul,"Jul 15, 1991",6-4,193.0,205.0,93.0,United States,William Fleming High School,,,
+NBA,2016 - 2017,Playoffs,Matt Barnes,GSW,12,60.9,4,15,1,8,0,0,3,9,0,9,9,7,2,0,9,1980.0,Mar,"Mar 9, 1980",6-7,201.0,226.0,103.0,United States,Del Campo High School,2.0,17.0,Memphis Grizzlies

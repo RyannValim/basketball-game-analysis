@@ -181,87 +181,213 @@ NORMALIZAÇÃO E TREINAMENTO DA REDE NEURAL.
 
 ===========================================================================
 
-6. NORMALIZAÇÃO DOS DADOS (06_normalizacao_dados.py)
-----------------------------------------------------
+6. NORMALIZAÇÃO DOS DADOS + CRIAÇÃO DA EFICIÊNCIA (EFF)
+   (06_normalizacao_dados.py)
+--------------------------------------------------------
 
 Após a criação das features proporcionais e percentuais, realizamos a etapa de
-normalização dos dados. Normalizar é essencial para treinar redes neurais,
-pois cada feature possui escalas diferentes (por exemplo: PTS_per_min varia em
-torno de 0.1 a 0.9, enquanto MIN total pode chegar a centenas). Essa diferença
-pode prejudicar o aprendizado, já que valores maiores acabam dominando o erro
-durante o treinamento.
+normalização dos dados. Essa etapa é fundamental para preparar o dataset para o
+treinamento da rede neural, garantindo que todas as entradas tenham escalas
+compatíveis.
 
-Para resolver isso, aplicamos o método MinMaxScaler (0–1), que transforma todos
-os valores numéricos para o intervalo [0, 1]. Isso garante que todas as
-features tenham o mesmo peso e importância inicial dentro da rede neural.
+Utilizamos o método MinMaxScaler (0–1), que transforma todas as colunas
+numéricas para o intervalo [0, 1]. Isso evita que valores maiores influenciem
+de forma desproporcional o aprendizado do modelo.
 
 -----------------------------------------------------------
 A) SELEÇÃO DAS FEATURES NUMÉRICAS
 -----------------------------------------------------------
 
-Como o dataset final contém apenas estatísticas numéricas (todas as colunas
-categóricas já haviam sido removidas), utilizamos o comando:
+Como o dataset final contém apenas estatísticas numéricas, utilizamos:
 
     df_numerico = df.select_dtypes(include=['float64', 'int64'])
 
-Esse comando seleciona automaticamente apenas as colunas numéricas, garantindo
-que somente valores que fazem sentido sejam normalizados.
+Isso garante que apenas colunas relevantes sejam normalizadas.
 
 -----------------------------------------------------------
 B) APLICAÇÃO DO MINMAXSCALER (0–1)
 -----------------------------------------------------------
 
-Utilizamos o seguinte processo:
-
 1. Criamos o scaler:
        scaler = MinMaxScaler()
 
-2. Ajustamos e transformamos os dados:
+2. Ajustamos e transformamos:
        dados_normalizados = scaler.fit_transform(df_numerico)
 
-O resultado é uma matriz com todos os valores convertidos para o intervalo
-[0, 1], preservando proporcionalidade e relações entre os dados.
+O resultado é uma matriz com todas as features convertidas para a escala 0–1.
 
 -----------------------------------------------------------
 C) RECONSTRUÇÃO DO DATAFRAME NORMALIZADO
 -----------------------------------------------------------
-
-O array retornado pelo scaler é convertido novamente para DataFrame:
 
     df_normalizado = pd.DataFrame(
         dados_normalizados,
         columns=df_numerico.columns
     )
 
-Isso mantém os nomes das colunas originais e garante compatibilidade com as
-próximas etapas de treinamento.
+Isso garante que as colunas originais sejam preservadas com seus nomes corretos.
 
 -----------------------------------------------------------
-D) SALVAMENTO DO DATASET NORMALIZADO
+D) CRIAÇÃO DA MÉTRICA DE EFICIÊNCIA (EFF)
 -----------------------------------------------------------
 
-O dataset final normalizado foi salvo como:
+Após a normalização, criamos a métrica EFF, uma medida de impacto total do
+jogador. A fórmula utilizada segue o padrão da NBA, adaptada para valores
+normalizados:
+
+    EFF = (PTS + REB + AST + STL + BLK)
+          - ((FGA - FGM) + (FTA - FTM) + TOV_per_min)
+
+Essa métrica combina aspectos ofensivos, defensivos e penalidades, servindo como
+o target (variável de saída) para o treinamento da rede neural.
+
+-----------------------------------------------------------
+E) SALVAMENTO DO DATASET FINAL NORMALIZADO
+-----------------------------------------------------------
+
+O dataset final, com todas as features normalizadas e a coluna EFF criada, foi
+salvo em:
 
     ./dados_jogadores/nba_playoffs_2016_2017_normalizado.csv
 
-Este arquivo contém todas as features criadas anteriormente, agora dentro da
-mesma escala (0–1). Ele é o arquivo que deve ser usado no processo de treino
-da rede neural.
+Este é o arquivo oficial utilizado na etapa 07 (treinamento da rede neural).
 
 -----------------------------------------------------------
-E) OBJETIVO DESSA ETAPA
+F) OBJETIVO DESSA ETAPA
 -----------------------------------------------------------
 
-A normalização é indispensável para redes neurais, pois:
-
-- impede que features com valores maiores dominem o aprendizado;
-- acelera a convergência do modelo durante o treino;
-- melhora a estabilidade dos cálculos internos;
-- permite que pesos e gradientes sejam distribuídos de forma equilibrada.
-
-Sem normalização, o treinamento poderia falhar, demorar demais ou aprender
-padrões incorretos.
+A normalização:
+- evita que features de maior magnitude dominem o treinamento;
+- melhora a estabilidade e velocidade de convergência da rede neural;
+- permite que todas as métricas funcionem em uma mesma escala;
+- prepara o dataset para ser usado diretamente como entrada no modelo.
 
 ===========================================================================
 
- 
+7. TREINAMENTO DO MODELO DE REDE NEURAL (PyTorch)
+   (07_treinamento_rede.py)
+-----------------------------------------------------------
+
+Após as etapas de criação de features e normalização, iniciou-se o
+treinamento da rede neural MLP utilizando a biblioteca PyTorch,
+conforme exigido pelos requisitos do projeto.
+
+O objetivo é prever a eficiência (EFF) dos jogadores com base em suas
+estatísticas normalizadas.
+
+-----------------------------------------------------------
+A) PREPARAÇÃO DOS DADOS PARA TREINO
+-----------------------------------------------------------
+
+Foram executados os passos:
+
+1. Separação das variáveis de entrada (X) e saída (y):
+       X = todas as features numéricas normalizadas
+       y = coluna EFF
+
+2. Divisão dos dados em treino e teste:
+       80% para treino, 20% para teste
+
+3. Conversão para tensores PyTorch:
+       torch.tensor(..., dtype=torch.float32)
+
+Isso permite que os dados sejam usados diretamente na rede neural.
+
+-----------------------------------------------------------
+B) ARQUITETURA DA REDE NEURAL (MLP)
+-----------------------------------------------------------
+
+A rede utilizada possui o formato:
+
+    Entrada (26 features)
+       ↓
+    Camada oculta 1 — 64 neurônios + função de ativação
+       ↓
+    Camada oculta 2 — 32 neurônios + função de ativação
+       ↓
+    Saída — 1 neurônio (valor da EFF prevista)
+
+As funções de ativação foram parametrizadas, permitindo testar ReLU
+e Tanh conforme exigido no projeto.
+
+A camada de saída é linear, pois o problema é de regressão.
+
+-----------------------------------------------------------
+C) LOOP DE TREINAMENTO
+-----------------------------------------------------------
+
+Foi implementada a função `treinar_modelo`, contendo:
+
+- função de perda: MSELoss  
+- otimizador: Adam  
+- taxa de aprendizado (η): 0.001  
+- 200 épocas de treino  
+- tamanho do lote: 16 (mini-batches)
+
+Durante o treinamento, o modelo faz:
+
+    forward → cálculo da perda → backpropagation → atualização dos pesos
+
+A cada 20 épocas é exibido o erro médio, atendendo ao requisito:
+
+> “Exibir o vetor de erros a cada iteração.”
+
+-----------------------------------------------------------
+D) TESTE DAS FUNÇÕES DE ATIVAÇÃO
+-----------------------------------------------------------
+
+Foram treinados dois modelos:
+
+- MLP + ReLU
+- MLP + Tanh
+
+O desempenho foi monitorado separadamente e os vetores de perda foram
+armazenados para geração dos gráficos.
+
+===========================================================================
+
+8. AVALIAÇÃO DO MODELO E CURVA DE PERDA
+-----------------------------------------------------------
+
+Após o treinamento, as curvas de perda das duas funções de ativação
+foram plotadas em um mesmo gráfico utilizando Matplotlib.  
+Esse gráfico demonstra a velocidade de convergência e estabilidade
+de cada modelo.
+
+-----------------------------------------------------------
+A) CURVA DE PERDA (TRAIN LOSS)
+-----------------------------------------------------------
+
+O gráfico gerado contém:
+
+- eixo X: número de épocas  
+- eixo Y: perda média (MSE)  
+- duas curvas: ReLU e Tanh  
+
+A ReLU apresentou convergência mais rápida e menor perda final,
+o que confirma seu bom desempenho em redes profundas.
+
+-----------------------------------------------------------
+B) AVALIAÇÃO NO CONJUNTO DE TESTE
+-----------------------------------------------------------
+
+Para verificar a capacidade de generalização, foram calculadas:
+
+- MSE (Mean Squared Error)
+- R² (coeficiente de determinação)
+
+Resultados obtidos:
+
+    ReLU → MSE = 0.001007 | R² = 0.9971  
+    Tanh → MSE = 0.001708 | R² = 0.9951  
+
+Esse desempenho indica que o modelo explica aproximadamente 99% da
+variação da eficiência real dos jogadores no conjunto de teste,
+sendo adequado para previsões futuras.
+
+A ReLU foi escolhida como modelo final por apresentar:
+- menor perda,
+- maior R²,
+- e maior estabilidade durante o treinamento.
+
+===========================================================================

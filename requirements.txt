@@ -1,3 +1,8 @@
+pandas
+numpy
+scikit-learn
+torch
+matplotlib
 kaggle
 
 # pip install -r requirements.txt
