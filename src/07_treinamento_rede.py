@@ -31,7 +31,6 @@ y = df["EFF"]
 print("Colunas de entrada (X):", list(X.columns))
 print("Total de jogadores:", X.shape[0])
 
-
 # 3. Dividir dados em treino e teste
 X_treino, X_teste, y_treino, y_teste = train_test_split(
     X.values,
@@ -70,16 +69,15 @@ class RedeMLP(nn.Module):
         super().__init__()
 
         self.modelo = nn.Sequential(
-            nn.Linear(26, 64),     # 1ª camada oculta
+            nn.Linear(26, 64),     # 1° camada oculta
             funcao_ativacao(),     # ativação escolhida
-            nn.Linear(64, 32),     # 2ª camada oculta
+            nn.Linear(64, 32),     # 2° camada oculta
             funcao_ativacao(),     # ativação escolhida
             nn.Linear(32, 1)       # saída (linear)
         )
 
     def forward(self, x):
         return self.modelo(x)
-
 
 """
 26  = número de features (entradas)
@@ -202,7 +200,7 @@ if __name__ == "__main__":
     plt.grid(True)
     plt.show()
     
-    # 10. Salvar modelo final (ReLU)
+    # 10. Salvar melhor modelo final (ReLU)
     caminho_modelo = "./dados_jogadores/modelo_eff_relu.pth"
     torch.save(modelo_relu.state_dict(), caminho_modelo)
     print(f"\nModelo final (ReLU) salvo em: {caminho_modelo}")
